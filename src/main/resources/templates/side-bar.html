@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link href="../../static/css/style.css" rel="stylesheet">
+		<title>order-list</title>
+	</head>
+	<th:block th:fragment=”side-bar”>
+		<div id="side-bar" class="container">
+			<div class="row">
+				<div class= "col-12">
+					<div class="logo">__repository</div>
+				</div>
+			</div>
+			<div class="row">
+				<ul class="menu-list">
+					<li class="menu-item">
+						<div class= "col-3">
+							<div class="menu-icon">✔️</div>
+						</div>
+						<div class= "col-9">
+							<div class="menu-title"><a href="#">注文一覧</a></div>
+						</div>
+					</li>
+					<li class="menu-item">
+						<div class= "col-3">
+							<div class="menu-icon">✔️</div>
+						</div>
+						<div class= "col-9">
+							<div class="menu-title"><a href="#">顧客一覧</a></div>
+						</div>
+					</li>
+					<li class="menu-item">
+						<div class= "col-3">
+							<div class="menu-icon">✔️</div>
+						</div>
+						<div class= "col-9">
+							<div class="menu-title"><a href="#">商品一覧</a></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-4 setting-icon">
+					<img> <!-- ネジアイコン -->
+				</div>
+			</div>
+		</div>
+	</th:block>
 </html>
