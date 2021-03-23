@@ -1,4 +1,4 @@
-package com.birdapp.bp;
+package com.birdapp.bp.repository_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
