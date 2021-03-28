@@ -8,6 +8,6 @@ import java.io.Serializable;
  * @author bp
  *
  */
-public class ManufacturerFrom implements Serializable {
+public class ManufacturerForm implements Serializable {
 
 }
