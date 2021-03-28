@@ -7,9 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.birdapp.bp.repository_app.app.form.user.UserForm;
 import com.birdapp.bp.repository_app.domain.model.user.User;
 import com.birdapp.bp.repository_app.domain.service.user.IUserService;
 
+/**
+ * CONTROLLER FOR USERS.
+ *
+ * @author bp
+ *
+ */
 @Controller
 public class UserController<F extends UserForm> {
 
