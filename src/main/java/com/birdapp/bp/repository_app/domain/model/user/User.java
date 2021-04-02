@@ -6,7 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.AbstractEntity;
+import com.birdapp.bp.repository_app.domain.model.Contact;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,19 +21,7 @@ import lombok.Setter;
 @Table(name = "users")
 @Getter
 @Setter
-public class User extends AbstractEntity {
-
-    /** LASTNAME. */
-    @Column(name = "FIRSTNAME")
-    private String firstname;
-
-    /** FIRSTNAME. */
-    @Column(name = "LASTNAME")
-    private String lastname;
-
-    /** EMAIL. */
-    @Column(name = "EMAIL")
-    private String email;
+public class User extends Contact {
 
     /** PASSWORD. */
     private String password;
@@ -43,6 +31,7 @@ public class User extends AbstractEntity {
     private String bcryptPassword;
 
     /** ROLE. */
+    @Column(name = "ROLENAME")
     @Enumerated(EnumType.STRING)
     private Rolename rolename;
 }
