@@ -1,6 +1,7 @@
 package com.birdapp.bp.repository_app.domain.repository.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import com.birdapp.bp.repository_app.domain.model.product.ProductCategory;
@@ -12,5 +13,8 @@ import com.birdapp.bp.repository_app.domain.model.product.ProductCategory;
  *
  */
 @Repository
-public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
+public interface ProductCategoryRepository
+		extends JpaRepository<ProductCategory, Long>, JpaSpecificationExecutor<ProductCategory> {
+
+	public ProductCategory findByName(String name);
 }

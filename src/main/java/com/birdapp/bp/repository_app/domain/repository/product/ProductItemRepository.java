@@ -1,6 +1,7 @@
 package com.birdapp.bp.repository_app.domain.repository.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import com.birdapp.bp.repository_app.domain.model.product.ProductItem;
@@ -12,5 +13,7 @@ import com.birdapp.bp.repository_app.domain.model.product.ProductItem;
  *
  */
 @Repository
-public interface ProductItemRepository extends JpaRepository<ProductItem, Long> {
+public interface ProductItemRepository
+		extends JpaRepository<ProductItem, Long>, JpaSpecificationExecutor<ProductItem> {
+
 }
