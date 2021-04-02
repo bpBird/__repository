@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.AbstractEntity;
+import com.birdapp.bp.repository_app.domain.model.BaseEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Table(name = "manufacturers")
 @Getter
 @Setter
-public class Manufacturer extends AbstractEntity{
+public class Manufacturer extends BaseEntity{
 
     /** NAME. */
     @Column(name = "NAME")

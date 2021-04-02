@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.AbstractEntity;
+import com.birdapp.bp.repository_app.domain.model.BaseEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +25,7 @@ import lombok.Setter;
 @Table(name = "order_items")
 @Getter
 @Setter
-public class OrderItem extends AbstractEntity{
+public class OrderItem extends BaseEntity{
 
     /** ORDER ID. */
     @OneToOne(mappedBy = "orders", cascade = {CascadeType.PERSIST, CascadeType.MERGE})

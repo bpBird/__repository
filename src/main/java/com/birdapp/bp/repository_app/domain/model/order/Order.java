@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.AbstractEntity;
+import com.birdapp.bp.repository_app.domain.model.BaseEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +26,7 @@ import lombok.Setter;
 @Table(name = "orders")
 @Getter
 @Setter
-public class Order extends AbstractEntity{
+public class Order extends BaseEntity{
 
     /** CUSTOMER ID. */
     @ManyToOne

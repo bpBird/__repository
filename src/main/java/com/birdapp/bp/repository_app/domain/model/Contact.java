@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
  *
  */
 @MappedSuperclass
-public abstract class Contact extends AbstractEntity {
+public abstract class Contact extends BaseEntity {
 
     /** LASTNAME. */
     @Column(name = "FIRSTNAME")
