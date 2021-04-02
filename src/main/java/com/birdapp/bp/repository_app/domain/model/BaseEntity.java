@@ -20,7 +20,7 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract class AbstractEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
     /** ID. */
     @Id
