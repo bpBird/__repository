@@ -1,7 +1,11 @@
 package com.birdapp.bp.repository_app.domain.model.customer;
 
+import java.util.Locale.IsoCountryCode;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.birdapp.bp.repository_app.domain.model.Contact;
@@ -23,7 +27,8 @@ public class Customer extends Contact {
 
     /** COUNTRY. */
     @Column(name = "COUNTRY")
-    private String country;
+    @Enumerated(EnumType.STRING)
+    private IsoCountryCode country;
 
     /** STATE. */
     @Column(name = "STATE")
