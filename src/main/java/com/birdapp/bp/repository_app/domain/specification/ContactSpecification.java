@@ -3,29 +3,23 @@ package com.birdapp.bp.repository_app.domain.specification;
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
 
-import com.birdapp.bp.repository_app.domain.model.Contact;
+import com.birdapp.bp.repository_app.domain.model.ContactEntity;
 
-public abstract class ContactSpecification extends BaseSpecification<Contact>{
+/**
+ * SPECIFICATION FOR CONTACT.
+ *
+ * @author bp
+ *
+ */
+public abstract class ContactSpecification<T> extends BaseSpecification<ContactEntity>{
 
-	public Specification<Contact> containsLastname(String name) {
-		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
-			return cb.equal(root.get("lastname"), "%" + name + "%");
-		};
-	}
-
-	public Specification<Contact> containsFirstname(String name) {
-		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
-			return cb.equal(root.get("firstname"), "%" + name + "%");
-		};
-	}
-
-	public Specification<Contact> hasPhoneNumber(String phoneNumber) {
+	public Specification<T> hasPhoneNumber(String phoneNumber) {
 		return StringUtils.isEmpty(phoneNumber) ? null : (root, query, cb) -> {
 			return cb.equal(root.get("phoneNumber"), phoneNumber);
 		};
 	}
 
-	public Specification<Contact> hasEmail(String email) {
+	public Specification<T> hasEmail(String email) {
 		return StringUtils.isEmpty(email) ? null : (root, query, cb) -> {
 			return cb.equal(root.get("email"), email);
 		};
