@@ -17,7 +17,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ORDER DATA.
+ * ORDER ENTITY.
  *
  * @author bp
  *
@@ -28,21 +28,26 @@ import lombok.Setter;
 @Setter
 public class Order extends BaseEntity{
 
-    /** CUSTOMER ID. */
-    @ManyToOne
-    @JoinColumn(name = "customers_id")
-    private Long customerId;
+	/** ORGANIZATION ID. */
+	@ManyToOne
+	@JoinColumn(name = "ORGANIZATIONS_ID")
+	private Long organizationId;
 
-    /** TOTAL PRICE. */
-    @Column(name = "TOTAL_PRICE")
-    private BigDecimal totalPrice;
+	/** CUSTOMER ID. */
+	@ManyToOne
+	@JoinColumn(name = "CUSTOMERS_ID")
+	private Long customerId;
 
-    /** ORDER DATE. */
-    @Column(name = "ORDER_DATE")
-    private LocalDateTime orderDate;
+	/** TOTAL PRICE. */
+	@Column(name = "TOTAL_PRICE")
+	private BigDecimal totalPrice;
 
-    /** ORDER STATUS. */
-    @Enumerated(EnumType.STRING)
-    @Column(name = "ORDER_DATE")
-    private OrderStatus orderStatus;
+	/** ORDER DATE. */
+	@Column(name = "ORDER_DATE")
+	private LocalDateTime orderDate;
+
+	/** ORDER STATUS. */
+	@Enumerated(EnumType.STRING)
+	@Column(name = "ORDER_STATUS")
+	private OrderStatus orderStatus;
 }
