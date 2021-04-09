@@ -4,7 +4,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
 
 import com.birdapp.bp.repository_app.domain.model.customer.Customer;
-import com.birdapp.bp.repository_app.domain.specification.ContactSpecification;
+import com.birdapp.bp.repository_app.domain.specification.AddressSpecification;
 
 /**
  * SPECIFICATION FOR CUSTOMER.
@@ -12,23 +12,23 @@ import com.birdapp.bp.repository_app.domain.specification.ContactSpecification;
  * @author bp
  *
  */
-public class CustomerSpecification extends ContactSpecification {
+public class CustomerSpecification extends AddressSpecification<Customer> {
 
-	public Specification<Customer> hasCountry(String country) {
-		return StringUtils.isEmpty(country) ? null : (root, query, cb) -> {
-			return cb.equal(root.get("country"), country);
+	public Specification<Customer> hasOrganizationId(Long organizationId) {
+		return organizationId == null ? null : (root, query, cb) -> {
+			return cb.equal(root.get("organizationId"), organizationId);
 		};
 	}
 
-	public Specification<Customer> hasState(String state) {
-		return StringUtils.isEmpty(state) ? null : (root, query, cb) -> {
-			return cb.equal(root.get("state"), state);
+	public Specification<Customer> containsLastname(String name) {
+		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
+			return cb.equal(root.get("lastname"), "%" + name + "%");
 		};
 	}
 
-	public Specification<Customer> hasPrefecture(String prefecture) {
-		return StringUtils.isEmpty(prefecture) ? null : (root, query, cb) -> {
-			return cb.equal(root.get("prefecture"), prefecture);
+	public Specification<Customer> containsFirstname(String name) {
+		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
+			return cb.equal(root.get("firstname"), "%" + name + "%");
 		};
 	}
 }
