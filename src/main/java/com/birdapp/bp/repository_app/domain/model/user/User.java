@@ -4,15 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.Contact;
+import com.birdapp.bp.repository_app.domain.model.ContactEntity;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * USER DATA.
+ * USER ENTITY.
  *
  * @author bp
  *
@@ -21,17 +23,30 @@ import lombok.Setter;
 @Table(name = "users")
 @Getter
 @Setter
-public class User extends Contact {
+public class User extends ContactEntity {
 
-    /** PASSWORD. */
-    private String password;
+	/** ORGANIZATION ID. */
+	@ManyToOne
+	@JoinColumn(name = "ORGANIZATIONS_ID")
+	private Long organizationId;
 
-    /** BCRYPT PASSWORD. */
-    @Column(name = "BCRYPT_PASSWORD")
-    private String bcryptPassword;
+	/** LASTNAME. */
+	@Column(name = "LASTNAME")
+	private String lastname;
 
-    /** ROLE. */
-    @Column(name = "ROLENAME")
-    @Enumerated(EnumType.STRING)
-    private Rolename rolename;
+	/** FIRSTNAME. */
+	@Column(name = "FIRSTNAME")
+	private String firstname;
+
+	/** PASSWORD. */
+	private String password;
+
+	/** BCRYPT PASSWORD. */
+	@Column(name = "BCRYPT_PASSWORD")
+	private String bcryptPassword;
+
+	/** ROLE. */
+	@Column(name = "ROLENAME")
+	@Enumerated(EnumType.STRING)
+	private Rolename rolename;
 }
