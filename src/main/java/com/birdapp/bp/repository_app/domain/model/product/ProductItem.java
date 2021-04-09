@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * PRODUCT ITEM DATA.
+ * PRODUCT ITEM ENTITY.
  *
  * @author bp
  *
@@ -25,33 +25,38 @@ import lombok.Setter;
 @Setter
 public class ProductItem extends BaseEntity{
 
-    /** NAME. */
-    @Column(name = "NAME")
-    private String name;
+	/** ORGANIZATION ID. */
+	@ManyToOne
+	@JoinColumn(name = "ORGANIZATIONS_ID")
+	private Long organizationId;
 
-    /** CATEGORY ID. */
-    @ManyToOne
-    @JoinColumn(name = "PRODUCT_CATEGORIES_ID")
-    private Long productCategoryId;
+	/** NAME. */
+	@Column(name = "NAME")
+	private String name;
 
-    /** MANUFACTURER ID. */
-    @ManyToOne
-    @JoinColumn(name = "MANUFACTURER_ID")
-    private Long manufacturerId;
+	/** CATEGORY ID. */
+	@ManyToOne
+	@JoinColumn(name = "PRODUCT_CATEGORIES_ID")
+	private Long productCategoryId;
 
-    /** BUYING PRICE. */
-    @Column(name = "BUYING_PRICE")
-    private BigDecimal buyingPrice;
+	/** MANUFACTURER ID. */
+	@ManyToOne
+	@JoinColumn(name = "MANUFACTURER_ID")
+	private Long manufacturerId;
 
-    /** SELLING PRICE. */
-    @Column(name = "SELLING_PRICE")
-    private BigDecimal sellingPrice;
+	/** BUYING PRICE. */
+	@Column(name = "BUYING_PRICE")
+	private BigDecimal buyingPrice;
 
-    /** INHOUSE STOCK. */
-    @Column(name = "INHOUSE_STOCK")
-    private int inhouseStock;
+	/** SELLING PRICE. */
+	@Column(name = "SELLING_PRICE")
+	private BigDecimal sellingPrice;
 
-    /** ARRIVING STOCK. */
-    @Column(name = "ARRIVING_STOCK")
-    private int arrivingStock;
+	/** INHOUSE STOCK. */
+	@Column(name = "INHOUSE_STOCK")
+	private int inhouseStock;
+
+	/** ARRIVING STOCK. */
+	@Column(name = "ARRIVING_STOCK")
+	private int arrivingStock;
 }
