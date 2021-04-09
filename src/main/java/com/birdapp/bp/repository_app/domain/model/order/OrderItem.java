@@ -16,7 +16,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * ORDERED ITEM DATA.
+ * ORDERED ITEM ENTITY.
  *
  * @author bp
  *
@@ -27,21 +27,21 @@ import lombok.Setter;
 @Setter
 public class OrderItem extends BaseEntity{
 
-    /** ORDER ID. */
-    @OneToOne(mappedBy = "orders", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "orders_id")
-    private Long orderId;
+	/** ORDER ID. */
+	@OneToOne(mappedBy = "orders", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@JoinColumn(name = "orders_id")
+	private Long orderId;
 
-    /** PRODUCT ID. */
-    @ManyToOne
-    @JoinColumn(name = "product_items_id")
-    private Long productItemId;
+	/** PRODUCT ID. */
+	@ManyToOne
+	@JoinColumn(name = "product_items_id")
+	private Long productItemId;
 
-    /** QUANTITY. */
-    @Column(name = "QUANTITY")
-    private int quantity;
+	/** QUANTITY. */
+	@Column(name = "QUANTITY")
+	private int quantity;
 
-    /** TOTAL PRICE. */
-    @Column(name = "TOTAL_PRICE")
-    private BigDecimal totalPrice;
+	/** TOTAL PRICE. */
+	@Column(name = "TOTAL_PRICE")
+	private BigDecimal totalPrice;
 }
