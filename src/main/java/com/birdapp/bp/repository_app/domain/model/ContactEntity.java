@@ -3,28 +3,25 @@ package com.birdapp.bp.repository_app.domain.model;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
- * ORDER DATA.
+ * CONTACT ENTITY (Abstract Entity).
  *
  * @author bp
  *
  */
 @MappedSuperclass
-public abstract class Contact extends BaseEntity {
+@Getter
+@Setter
+public abstract class ContactEntity extends BaseEntity {
 
-    /** LASTNAME. */
-    @Column(name = "FIRSTNAME")
-    private String firstname;
+	/** PHONE NUMBER. */
+	@Column(name = "PHONE_NUMBER")
+	private String phoneNumber;
 
-    /** FIRSTNAME. */
-    @Column(name = "LASTNAME")
-    private String lastname;
-
-    /** PHONE NUMBER. */
-    @Column(name = "PHONE_NUMBER")
-    private String phoneNumber;
-
-    /** EMAIL. */
-    @Column(name = "EMAIL")
-    private String email;
+	/** EMAIL. */
+	@Column(name = "EMAIL")
+	private String email;
 }
