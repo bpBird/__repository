@@ -1,20 +1,18 @@
 package com.birdapp.bp.repository_app.domain.model.customer;
 
-import java.util.Locale.IsoCountryCode;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.Contact;
+import com.birdapp.bp.repository_app.domain.model.AddressEntity;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * CUSTOMER DATA.
+ * CUSTOMER ENTITY.
  *
  * @author bp
  *
@@ -23,34 +21,18 @@ import lombok.Setter;
 @Table(name = "customers")
 @Getter
 @Setter
-public class Customer extends Contact {
+public class Customer extends AddressEntity {
 
-    /** COUNTRY. */
-    @Column(name = "COUNTRY")
-    @Enumerated(EnumType.STRING)
-    private IsoCountryCode country;
+	/** ORGANIZATION ID. */
+	@ManyToOne
+	@JoinColumn(name = "ORGANIZATIONS_ID")
+	private Long organizationId;
 
-    /** STATE. */
-    @Column(name = "STATE")
-    private String state;
+	/** LASTNAME. */
+	@Column(name = "LASTNAME")
+	private String lastname;
 
-    /** PREFECTURE. */
-    @Column(name = "PREFECTURE")
-    private String prefecture;
-
-    /** CITY. */
-    @Column(name = "CITY")
-    private String city;
-
-    /** STREET ADDRESS. */
-    @Column(name = "STREET_ADDRESS")
-    private String streetAddress;
-
-    /** APARTMENT ADDRESS. */
-    @Column(name = "APARTMENT_ADDRESS")
-    private String apartmentAddress;
-
-    /** POSTAL CODE. */
-    @Column(name = "POSTAL_CODE")
-    private String postalCode;
+	/** FIRSTNAME. */
+	@Column(name = "FIRSTNAME")
+	private String firstname;
 }
