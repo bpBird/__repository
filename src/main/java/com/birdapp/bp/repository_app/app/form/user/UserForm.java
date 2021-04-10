@@ -1,7 +1,6 @@
 package com.birdapp.bp.repository_app.app.form.user;
 
-import java.io.Serializable;
-
+import com.birdapp.bp.repository_app.app.form.ContactForm;
 import com.birdapp.bp.repository_app.domain.model.user.Rolename;
 
 /**
@@ -10,7 +9,7 @@ import com.birdapp.bp.repository_app.domain.model.user.Rolename;
  * @author bp
  *
  */
-public class UserForm implements Serializable {
+public class UserForm extends ContactForm {
 
 	/** ORGANIZATION ID. */
 	private Long organizationId;
