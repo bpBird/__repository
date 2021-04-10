@@ -1,6 +1,6 @@
 package com.birdapp.bp.repository_app.app.form.manufacturer;
 
-import java.io.Serializable;
+import com.birdapp.bp.repository_app.app.form.ContactForm;
 
 /**
  * MANUFACTURER STAFF FORM.
@@ -8,6 +8,14 @@ import java.io.Serializable;
  * @author bp
  *
  */
-public class ManufacturerStaffForm implements Serializable {
+public class ManufacturerStaffForm extends ContactForm {
 
+	/** LASTNAME. */
+	private String firstname;
+
+	/** FIRSTNAME. */
+	private String lastname;
+
+	/** MANUFACTURER ID. */
+	private Long manufacturerId;
 }

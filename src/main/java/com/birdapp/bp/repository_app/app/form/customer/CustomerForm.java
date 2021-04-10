@@ -1,6 +1,6 @@
 package com.birdapp.bp.repository_app.app.form.customer;
 
-import java.io.Serializable;
+import com.birdapp.bp.repository_app.app.form.AddressForm;
 
 /**
  * CUSTOMER FORM.
@@ -8,6 +8,14 @@ import java.io.Serializable;
  * @author bp
  *
  */
-public class CustomerForm implements Serializable {
+public class CustomerForm extends AddressForm {
 
+	/** ORGANIZATION ID. */
+	private Long organizationId;
+
+	/** LASTNAME. */
+	private String lastname;
+
+	/** FIRSTNAME. */
+	private String firstname;
 }
