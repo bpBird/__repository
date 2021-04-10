@@ -1,10 +1,11 @@
 package com.birdapp.bp.repository_app.app.form.product;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.validation.constraints.DecimalMax;
+
+import com.birdapp.bp.repository_app.app.form.BaseForm;
 
 /**
  * PRODUCT ITEM FORM.
@@ -12,7 +13,7 @@ import javax.validation.constraints.DecimalMax;
  * @author bp
  *
  */
-public class ProductItemForm implements Serializable {
+public class ProductItemForm extends BaseForm {
 
 	/** ORGANIZATION ID. */
 	private Long organizationId;

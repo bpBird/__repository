@@ -1,6 +1,6 @@
 package com.birdapp.bp.repository_app.app.form.product;
 
-import java.io.Serializable;
+import com.birdapp.bp.repository_app.app.form.BaseForm;
 
 /**
  * PRODUCT CATEGORY FORM.
@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author bp
  *
  */
-public class ProductCategoryForm implements Serializable {
+public class ProductCategoryForm extends BaseForm {
 
 	/** ORGANIZATION ID. */
 	private Long organizationId;
