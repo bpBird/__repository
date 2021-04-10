@@ -9,11 +9,11 @@ public abstract class ContactForm extends BaseForm{
 	/** PHONE NUMBER. */
 	@NotNull
 	@Size(min = 10, max = 15)
-	private String phoneNumber;
+	protected String phoneNumber;
 
 	/** EMAIL. */
 	@NotNull
 	@Size(min = 1, max = 100)
 	@Email
-	private String email;
+	protected String email;
 }
