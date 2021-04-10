@@ -10,4 +10,10 @@ import java.io.Serializable;
  */
 public class ProductCategoryForm implements Serializable {
 
+	/** ORGANIZATION ID. */
+	private Long organizationId;
+
+	/** NAME. */
+	private String name;
+
 }
