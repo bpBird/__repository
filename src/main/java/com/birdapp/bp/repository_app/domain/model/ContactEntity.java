@@ -19,9 +19,9 @@ public abstract class ContactEntity extends BaseEntity {
 
 	/** PHONE NUMBER. */
 	@Column(name = "PHONE_NUMBER")
-	private String phoneNumber;
+	protected String phoneNumber;
 
 	/** EMAIL. */
 	@Column(name = "EMAIL")
-	private String email;
+	protected String email;
 }

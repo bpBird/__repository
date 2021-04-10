@@ -24,29 +24,29 @@ public abstract class AddressEntity extends ContactEntity{
 	/** COUNTRY. */
 	@Column(name = "COUNTRY")
 	@Enumerated(EnumType.STRING)
-	private IsoCountryCode country;
+	protected IsoCountryCode country;
 
 	/** STATE. */
 	@Column(name = "STATE")
-	private String state;
+	protected String state;
 
 	/** PREFECTURE. */
 	@Column(name = "PREFECTURE")
-	private String prefecture;
+	protected String prefecture;
 
 	/** CITY. */
 	@Column(name = "CITY")
-	private String city;
+	protected String city;
 
 	/** STREET ADDRESS. */
 	@Column(name = "STREET_ADDRESS")
-	private String streetAddress;
+	protected String streetAddress;
 
 	/** APARTMENT ADDRESS. */
 	@Column(name = "APARTMENT_ADDRESS")
-	private String apartmentAddress;
+	protected String apartmentAddress;
 
 	/** POSTAL CODE. */
 	@Column(name = "POSTAL_CODE")
-	private String postalCode;
+	protected String postalCode;
 }
