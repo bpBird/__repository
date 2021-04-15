@@ -35,19 +35,19 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public boolean saveUser() {
+	public User saveUser() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean updateUser() {
+	public User updateUser() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean deleteUser() {
+	public Boolean deleteUser() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

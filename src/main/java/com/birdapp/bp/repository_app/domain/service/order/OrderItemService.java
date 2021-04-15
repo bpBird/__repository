@@ -31,19 +31,19 @@ public class OrderItemService implements IOrderItemService {
 	}
 
 	@Override
-	public boolean saveOrderItem() {
+	public OrderItem saveOrderItem() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean updateOrderItem() {
+	public OrderItem updateOrderItem() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean deleteOrderItem() {
+	public Boolean deleteOrderItem() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

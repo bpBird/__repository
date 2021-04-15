@@ -31,19 +31,19 @@ public class ManufacturerService implements IManufacturerService {
 	}
 
 	@Override
-	public boolean saveManufacturer() {
+	public Manufacturer saveManufacturer() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean updateManufacturer() {
+	public Manufacturer updateManufacturer() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean deleteManufacturer() {
+	public Boolean deleteManufacturer() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

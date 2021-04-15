@@ -31,19 +31,19 @@ public class ProductCategoryService implements IProductCategoryService {
 	}
 
 	@Override
-	public boolean saveProductCategory() {
+	public ProductCategory saveProductCategory() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean updateProductCategory() {
+	public ProductCategory updateProductCategory() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean deleteProductCategory() {
+	public Boolean deleteProductCategory() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

@@ -31,21 +31,20 @@ public class ManufacturerStaffService implements IManufacturerStaffService {
 	}
 
 	@Override
-	public boolean saveManufacturerStaff() {
+	public ManufacturerStaff saveManufacturerStaff() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean updateManufacturerStaff() {
+	public ManufacturerStaff updateManufacturerStaff() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return null;
 	}
 
 	@Override
-	public boolean deleteManufacturerStaff() {
+	public Boolean deleteManufacturerStaff() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
-
 }
