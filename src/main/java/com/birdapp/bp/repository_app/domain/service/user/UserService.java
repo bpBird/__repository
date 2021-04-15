@@ -35,7 +35,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public boolean registerUser() {
+	public boolean saveUser() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

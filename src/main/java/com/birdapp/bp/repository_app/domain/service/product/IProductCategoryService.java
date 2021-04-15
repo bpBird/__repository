@@ -16,7 +16,7 @@ public interface IProductCategoryService {
 
 	ProductCategory getProductCategory();
 
-	boolean registerProductCategory();
+	boolean saveProductCategory();
 
 	boolean updateProductCategory();
 

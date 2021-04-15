@@ -16,7 +16,7 @@ public interface IProductItemService {
 
 	ProductItem getProductItem();
 
-	boolean registerProductItem();
+	boolean saveProductItem();
 
 	boolean updateProductItem();
 

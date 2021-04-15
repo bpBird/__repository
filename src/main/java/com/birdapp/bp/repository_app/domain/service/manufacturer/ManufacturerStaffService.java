@@ -31,7 +31,7 @@ public class ManufacturerStaffService implements IManufacturerStaffService {
 	}
 
 	@Override
-	public boolean registerManufacturerStaff() {
+	public boolean saveManufacturerStaff() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

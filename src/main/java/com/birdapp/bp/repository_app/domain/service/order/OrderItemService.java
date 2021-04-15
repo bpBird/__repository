@@ -31,7 +31,7 @@ public class OrderItemService implements IOrderItemService {
 	}
 
 	@Override
-	public boolean registerOrderItem() {
+	public boolean saveOrderItem() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

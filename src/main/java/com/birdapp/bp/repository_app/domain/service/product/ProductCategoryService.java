@@ -31,7 +31,7 @@ public class ProductCategoryService implements IProductCategoryService {
 	}
 
 	@Override
-	public boolean registerProductCategory() {
+	public boolean saveProductCategory() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

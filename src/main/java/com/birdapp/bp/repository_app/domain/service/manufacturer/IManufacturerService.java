@@ -16,7 +16,7 @@ public interface IManufacturerService {
 
 	Manufacturer getManufacturer();
 
-	boolean registerManufacturer();
+	boolean saveManufacturer();
 
 	boolean updateManufacturer();
 

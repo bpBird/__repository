@@ -31,7 +31,7 @@ public class ProductItemService implements IProductItemService {
 	}
 
 	@Override
-	public boolean registerProductItem() {
+	public boolean saveProductItem() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}

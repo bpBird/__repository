@@ -16,7 +16,7 @@ public interface IUserService {
 
 	User getUser();
 
-	boolean registerUser();
+	boolean saveUser();
 
 	boolean updateUser();
 

@@ -12,14 +12,22 @@ import com.birdapp.bp.repository_app.domain.model.customer.Customer;
  */
 public interface ICustomerService {
 
-	List<Customer> getCustomerList();
+	List<Customer> getCustomerList(
+//			Long id,
+//			String name,
+//			Optional<String> phoneNumber,
+//			Optional<String> email,
+//			Optional<String> country,
+//			Optional<String> state,
+//			Optional<String> prefecture
+			);
 
 	Customer getCustomer();
 
-	boolean registerCustomer();
+	Customer saveCustomer();
 
-	boolean updateCustomer();
+	Customer updateCustomer();
 
-	boolean deleteCustomer();
+	Customer deleteCustomer();
 
 }

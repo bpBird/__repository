@@ -16,7 +16,7 @@ public interface IOrderItemService {
 
 	OrderItem getOrderItem();
 
-	boolean registerOrderItem();
+	boolean saveOrderItem();
 
 	boolean updateOrderItem();
 

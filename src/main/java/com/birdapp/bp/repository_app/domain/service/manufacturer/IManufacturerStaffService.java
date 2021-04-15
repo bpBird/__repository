@@ -16,7 +16,7 @@ public interface IManufacturerStaffService {
 
 	ManufacturerStaff getManufacturerStaff();
 
-	boolean registerManufacturerStaff();
+	boolean saveManufacturerStaff();
 
 	boolean updateManufacturerStaff();
 
