@@ -2,8 +2,8 @@ package com.birdapp.bp.repository_app.app.form.product;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 
@@ -16,9 +16,11 @@ import com.birdapp.bp.repository_app.app.form.BaseForm;
 public class ProductItemForm extends BaseForm {
 
 	/** ORGANIZATION ID. */
+	@NotNull
 	private Long organizationId;
 
 	/** NAME. */
+	@NotNull
 	private String name;
 
 	/** CATEGORY ID. */
@@ -32,15 +34,16 @@ public class ProductItemForm extends BaseForm {
 	private BigDecimal buyingPrice;
 
 	/** SELLING PRICE. */
+	@NotNull
 	@DecimalMax("9999999.99")
 	private BigDecimal sellingPrice;
 
 	/** INHOUSE STOCK. */
-	@Column(name = "INHOUSE_STOCK")
+	//TODO set the appropriate limit
 	private int inhouseStock;
 
 	/** ARRIVING STOCK. */
-	@Column(name = "ARRIVING_STOCK")
+	//TODO set the appropriate limit
 	private int arrivingStock;
 
 }

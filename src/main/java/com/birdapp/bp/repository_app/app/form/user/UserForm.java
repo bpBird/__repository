@@ -1,5 +1,7 @@
 package com.birdapp.bp.repository_app.app.form.user;
 
+import javax.validation.constraints.NotNull;
+
 import com.birdapp.bp.repository_app.app.form.ContactForm;
 import com.birdapp.bp.repository_app.domain.model.user.Rolename;
 
@@ -12,6 +14,7 @@ import com.birdapp.bp.repository_app.domain.model.user.Rolename;
 public class UserForm extends ContactForm {
 
 	/** ORGANIZATION ID. */
+	@NotNull
 	private Long organizationId;
 
 	/** LASTNAME. */
@@ -21,11 +24,14 @@ public class UserForm extends ContactForm {
 	private String firstname;
 
 	/** PASSWORD. */
+	@NotNull
 	private String password;
 
 	/** BCRYPT PASSWORD. */
+	@NotNull
 	private String bcryptPassword;
 
 	/** ROLE. */
+	@NotNull
 	private Rolename rolename;
 }

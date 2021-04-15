@@ -1,5 +1,7 @@
 package com.birdapp.bp.repository_app.app.form.manufacturer;
 
+import javax.validation.constraints.NotNull;
+
 import com.birdapp.bp.repository_app.app.form.ContactForm;
 
 /**
@@ -17,5 +19,6 @@ public class ManufacturerStaffForm extends ContactForm {
 	private String lastname;
 
 	/** MANUFACTURER ID. */
+	@NotNull
 	private Long manufacturerId;
 }
