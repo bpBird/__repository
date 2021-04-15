@@ -12,14 +12,44 @@ import com.birdapp.bp.repository_app.domain.model.manufacturer.ManufacturerStaff
  */
 public interface IManufacturerStaffService {
 
+	/**
+	 * RETURNS THE MANUFACTURER STAFF LIST.
+	 *
+	 * @return {@code ArrayList} manufacturerStaffList
+	 *
+	 */
 	List<ManufacturerStaff> getManufacturerStaffList();
 
+	/**
+	 * RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} manufacturerStaff
+	 *
+	 */
 	ManufacturerStaff getManufacturerStaff();
 
-	boolean saveManufacturerStaff();
+	/**
+	 * SAVES AND RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} savedManufacturerStaff
+	 *
+	 */
+	ManufacturerStaff saveManufacturerStaff();
 
-	boolean updateManufacturerStaff();
+	/**
+	 * UPDATES AND RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} updatedManufacturerStaff
+	 *
+	 */
+	ManufacturerStaff updateManufacturerStaff();
 
-	boolean deleteManufacturerStaff();
+	/**
+	 * DELETES AND RETURNS IF THE MANUFACTURER STAFF IS DELETED.
+	 *
+	 * @return {@code true} if ManufacturerStaff is deleted
+	 *
+	 */
+	Boolean deleteManufacturerStaff();
 
 }

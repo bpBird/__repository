@@ -12,13 +12,43 @@ import com.birdapp.bp.repository_app.domain.model.product.ProductCategory;
  */
 public interface IProductCategoryService {
 
+	/**
+	 * RETURNS THE PRODUCT CATEGORY LIST.
+	 *
+	 * @return {@code ArrayList} productCategoryList
+	 *
+	 */
 	List<ProductCategory> getProductCategoryList();
 
+	/**
+	 * RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} productCategory
+	 *
+	 */
 	ProductCategory getProductCategory();
 
-	boolean saveProductCategory();
+	/**
+	 * SAVES AND RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} savedProductCategory
+	 *
+	 */
+	ProductCategory saveProductCategory();
 
-	boolean updateProductCategory();
+	/**
+	 * UPDATES AND RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} updatedProductCategory
+	 *
+	 */
+	ProductCategory updateProductCategory();
 
-	boolean deleteProductCategory();
+	/**
+	 * DELETES AND RETURNS IF THE PRODUCT CATEGORY IS DELETED.
+	 *
+	 * @return {@code true} if ProductCategory is deleted
+	 *
+	 */
+	Boolean deleteProductCategory();
 }

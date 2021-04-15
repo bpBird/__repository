@@ -12,14 +12,44 @@ import com.birdapp.bp.repository_app.domain.model.user.User;
  */
 public interface IUserService {
 
+	/**
+	 * RETURNS THE USER LIST.
+	 *
+	 * @return {@code ArrayList} userList
+	 *
+	 */
 	List<User> getUserList();
 
+	/**
+	 * RETURNS THE USER.
+	 *
+	 * @return {@code User} user
+	 *
+	 */
 	User getUser();
 
-	boolean saveUser();
+	/**
+	 * SAVES AND RETURNS THE USER.
+	 *
+	 * @return {@code User} savedUser
+	 *
+	 */
+	User saveUser();
 
-	boolean updateUser();
+	/**
+	 * UPDATES AND RETURNS THE USER.
+	 *
+	 * @return {@code User} updatedUser
+	 *
+	 */
+	User updateUser();
 
-	boolean deleteUser();
+	/**
+	 * DELETES AND RETURNS IF THE USER IS DELETED.
+	 *
+	 * @return {@code true} if User is deleted
+	 *
+	 */
+	Boolean deleteUser();
 
 }

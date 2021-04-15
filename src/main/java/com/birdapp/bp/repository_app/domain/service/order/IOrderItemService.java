@@ -12,14 +12,44 @@ import com.birdapp.bp.repository_app.domain.model.order.OrderItem;
  */
 public interface IOrderItemService {
 
+	/**
+	 * RETURNS THE ORDER ITEM LIST.
+	 *
+	 * @return {@code ArrayList} oederItemList
+	 *
+	 */
 	List<OrderItem> getOrderItemList();
 
+	/**
+	 * RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} orderItem
+	 *
+	 */
 	OrderItem getOrderItem();
 
-	boolean saveOrderItem();
+	/**
+	 * SAVES AND RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} savedOrderItem
+	 *
+	 */
+	OrderItem saveOrderItem();
 
-	boolean updateOrderItem();
+	/**
+	 * UPDATES AND RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} updatedOrder
+	 *
+	 */
+	OrderItem updateOrderItem();
 
-	boolean deleteOrderItem();
+	/**
+	 * DELETES AND RETURNS IF THE ORDER ITEM IS DELETED.
+	 *
+	 * @return {@code true} if OrderItem is deleted
+	 *
+	 */
+	Boolean deleteOrderItem();
 
 }

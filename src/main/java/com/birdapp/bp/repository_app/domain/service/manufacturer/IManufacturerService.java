@@ -12,14 +12,44 @@ import com.birdapp.bp.repository_app.domain.model.manufacturer.Manufacturer;
  */
 public interface IManufacturerService {
 
+	/**
+	 * RETURNS THE MANUFACTURER LIST.
+	 *
+	 * @return {@code ArrayList} manufacturerList
+	 *
+	 */
 	List<Manufacturer> getManufacturerList();
 
+	/**
+	 * RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
 	Manufacturer getManufacturer();
 
-	boolean saveManufacturer();
+	/**
+	 * SAVES AND RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
+	Manufacturer saveManufacturer();
 
-	boolean updateManufacturer();
+	/**
+	 * UPDATES AND RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
+	Manufacturer updateManufacturer();
 
-	boolean deleteManufacturer();
+	/**
+	 * DELETES AND RETURNS IF THE MANUFACTURER IS DELETED.
+	 *
+	 * @return {@code true} if manufacturer is deleted
+	 *
+	 */
+	Boolean deleteManufacturer();
 
 }
