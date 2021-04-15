@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public abstract class BaseForm implements Serializable {
 
 	/** ID. */
@@ -17,6 +19,7 @@ public abstract class BaseForm implements Serializable {
 
 	/** CREATED AT. */
 	@NotNull
+	@DateTimeFormat
 	protected LocalDateTime createdAt;
 
 	/** UPDATED BY. */
@@ -25,5 +28,6 @@ public abstract class BaseForm implements Serializable {
 
 	/** UPDATED AT. */
 	@NotNull
+	@DateTimeFormat
 	protected LocalDateTime updatedAt;
 }

@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 import com.birdapp.bp.repository_app.domain.model.order.OrderStatus;
 
@@ -31,6 +33,7 @@ public class OrderForm extends BaseForm {
 
 	/** ORDER DATE. */
 	@NotNull
+	@DateTimeFormat
 	//TODO set the appropriate limit
 	private LocalDateTime orderDate;
 
