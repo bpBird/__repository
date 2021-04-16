@@ -1,9 +1,15 @@
 package com.birdapp.bp.repository_app.app.form;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.birdapp.bp.repository_app.domain.validation.Email;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class ContactForm extends BaseForm{
 
 	/** PHONE NUMBER. */
