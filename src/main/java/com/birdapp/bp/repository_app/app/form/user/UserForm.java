@@ -1,9 +1,14 @@
 package com.birdapp.bp.repository_app.app.form.user;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.ContactForm;
 import com.birdapp.bp.repository_app.domain.model.user.Rolename;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * USER FORM.
@@ -11,11 +16,9 @@ import com.birdapp.bp.repository_app.domain.model.user.Rolename;
  * @author bp
  *
  */
+@Getter
+@Setter
 public class UserForm extends ContactForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
 
 	/** LASTNAME. */
 	private String lastname;
@@ -33,5 +36,6 @@ public class UserForm extends ContactForm {
 
 	/** ROLE. */
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	private Rolename rolename;
 }
