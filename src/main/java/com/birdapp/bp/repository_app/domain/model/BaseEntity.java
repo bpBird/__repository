@@ -10,7 +10,7 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract class BaseEntity extends AbstractEntity {
+public abstract class BaseEntity extends CoreEntity {
 
 	/** ORGANIZATION ID. */
 	@ManyToOne
