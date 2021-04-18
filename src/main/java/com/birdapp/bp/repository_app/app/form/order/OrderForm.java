@@ -10,17 +10,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 import com.birdapp.bp.repository_app.domain.model.order.OrderStatus;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * ORDER FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class OrderForm extends BaseForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
 
 	/** CUSTOMER ID. */
 	@NotNull

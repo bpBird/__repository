@@ -4,17 +4,18 @@ import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.AddressForm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * MANUFACTURER FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class ManufacturerForm extends AddressForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-    private Long organizationId;
 
     /** NAME. */
 	@NotNull

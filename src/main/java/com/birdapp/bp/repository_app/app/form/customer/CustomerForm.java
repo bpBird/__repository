@@ -4,17 +4,18 @@ import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.AddressForm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * CUSTOMER FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class CustomerForm extends AddressForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
 
 	/** LASTNAME. */
 	@NotNull

@@ -5,17 +5,18 @@ import javax.validation.constraints.Size;
 
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * PRODUCT CATEGORY FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class ProductCategoryForm extends BaseForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
 
 	/** NAME. */
 	@NotNull
