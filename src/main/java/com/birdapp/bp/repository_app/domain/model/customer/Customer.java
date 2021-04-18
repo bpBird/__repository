@@ -2,8 +2,6 @@ package com.birdapp.bp.repository_app.domain.model.customer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.birdapp.bp.repository_app.domain.model.AddressEntity;
@@ -22,11 +20,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Customer extends AddressEntity {
-
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
 
 	/** LASTNAME. */
 	@Column(name = "LASTNAME")
