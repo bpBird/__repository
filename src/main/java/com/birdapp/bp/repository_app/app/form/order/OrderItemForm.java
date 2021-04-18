@@ -6,12 +6,17 @@ import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * ORDER ITEM FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class OrderItemForm extends BaseForm {
 
 	/** ORDER ID. */
