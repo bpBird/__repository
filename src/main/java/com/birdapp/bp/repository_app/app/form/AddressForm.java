@@ -2,8 +2,21 @@ package com.birdapp.bp.repository_app.app.form;
 
 import java.util.Locale.IsoCountryCode;
 
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * ADDRESS FORM (abstract form).
+ *
+ * @author bp
+ *
+ */
+@MappedSuperclass
+@Getter
+@Setter
 public abstract class AddressForm extends ContactForm {
 
 	/** COUNTRY. */
