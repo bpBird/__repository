@@ -3,7 +3,7 @@ package com.birdapp.bp.repository_app.app.form.organization;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.birdapp.bp.repository_app.app.form.AbstractForm;
+import com.birdapp.bp.repository_app.app.form.CoreForm;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class OrganizationForm extends AbstractForm {
+public class OrganizationForm extends CoreForm {
 
 	/** NAME. */
 	@NotNull

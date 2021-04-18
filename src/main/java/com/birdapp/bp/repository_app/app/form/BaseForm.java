@@ -15,7 +15,7 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract class BaseForm extends AbstractForm {
+public abstract class BaseForm extends CoreForm {
 
 	/** ORGANIZATION ID. */
 	@NotNull
