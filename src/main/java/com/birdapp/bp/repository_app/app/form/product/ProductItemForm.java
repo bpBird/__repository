@@ -7,17 +7,18 @@ import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.repository_app.app.form.BaseForm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * PRODUCT ITEM FORM.
  *
  * @author bp
  *
  */
+@Getter
+@Setter
 public class ProductItemForm extends BaseForm {
-
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
 
 	/** NAME. */
 	@NotNull
