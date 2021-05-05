@@ -23,10 +23,17 @@ public class ProductItemController<F extends ProductItemForm> {
 	@Autowired
 	IProductItemService iProductItemService;
 
-	@GetMapping("/product/item/list")
+	@GetMapping("/product/list")
 	public String getProductItemList(Model model) {
+		//TODO get the searching requirements and return list view (no-param means all)
 		List<ProductItem> productItemList = iProductItemService.getProductItemList();
 		model.addAttribute(productItemList);
 		return "product/item/list";
+	}
+
+	@GetMapping("/product/edit-modal")
+	String editProduct (Model model) {
+		//TODO get the target object id and return edit view(modal window w/ form)
+		return "product/item/edit";
 	}
 }

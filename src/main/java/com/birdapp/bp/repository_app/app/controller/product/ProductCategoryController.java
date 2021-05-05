@@ -23,10 +23,17 @@ public class ProductCategoryController<F extends ProductCategoryForm> {
 	@Autowired
 	IProductCategoryService iProductCategoryService;
 
-	@GetMapping("/product/category/list")
+	@GetMapping("/product-category/list")
 	public String getProductCategoryList(Model model) {
+		//TODO get the searching requirements and return list view (no-param means all)
 		List<ProductCategory> productCategoryList = iProductCategoryService.getProductCategoryList();
 		model.addAttribute(productCategoryList);
 		return "product/category/list";
+	}
+
+	@GetMapping("/product-category/edit-modal")
+	String editProductCategory (Model model) {
+		//TODO get the target object id and return edit view(modal window w/ form)
+		return "product/category/edit";
 	}
 }
