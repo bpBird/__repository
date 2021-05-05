@@ -25,8 +25,15 @@ public class CustomerController<F extends CustomerForm> {
 
 	@GetMapping("/customer/list")
 	public String getCustomerList(Model model) {
+		//TODO get the searching requirements and return list view (no-param means all)
 		List<Customer> customerList = iCustomerService.getCustomerList();
 		model.addAttribute(customerList);
 		return "customer/list";
+	}
+
+	@GetMapping("/customer/edit-modal")
+	String editCustomer (Model model) {
+		//TODO get the target object id and return edit view(modal window w/ form)
+		return "customer/edit";
 	}
 }
