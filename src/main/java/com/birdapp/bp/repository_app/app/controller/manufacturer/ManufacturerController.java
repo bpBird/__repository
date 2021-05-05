@@ -25,8 +25,15 @@ public class ManufacturerController<F extends ManufacturerForm> {
 
 	@GetMapping("/manufacturer/list")
 	public String getManufacturerList(Model model) {
+		//TODO get the searching requirements and return list view (no-param means all)
 		List<Manufacturer> manufacturerList = iManufacturerService.getManufacturerList();
 		model.addAttribute(manufacturerList);
 		return "manufacturer/list";
+	}
+
+	@GetMapping("/manufacturer/edit-modal")
+	String editManufacturer (Model model) {
+		//TODO get the target object id and return edit view(modal window w/ form)
+		return "manufacturer/edit";
 	}
 }

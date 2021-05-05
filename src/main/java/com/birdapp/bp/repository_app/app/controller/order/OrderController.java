@@ -25,8 +25,15 @@ public class OrderController<F extends OrderForm> {
 
 	@GetMapping("/order/list")
 	public String getOrderList(Model model) {
+		//TODO get the searching requirements and return list view (no-param means all)
 		List<Order> orderList = iOrderService.getOrderList();
 		model.addAttribute(orderList);
 		return "/order/list";
+	}
+
+	@GetMapping("/order/edit-modal")
+	String editOrder (Model model) {
+		//TODO get the target object id and return edit view(modal window w/ form)
+		return "order/edit";
 	}
 }
