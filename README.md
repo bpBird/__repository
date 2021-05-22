@@ -1,4 +1,4 @@
-# __repository
+# __stock
 
 MySql起動コマンド<br>
 ```mysql -u root -p;```
