@@ -9,13 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.birdapp.bp</groupId>
-	<artifactId>repository_app</artifactId>
+	<artifactId>stock_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>repository_app</name>
-	<description>repository application</description>
+	<name>__stock</name>
+	<description>stock management application</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>14</java.version>
 	</properties>
 
 	<dependencies>
