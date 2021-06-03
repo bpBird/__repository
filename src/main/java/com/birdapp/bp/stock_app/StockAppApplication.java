@@ -1,15 +1,14 @@
-package com.birdapp.bp.repository_app;
+package com.birdapp.bp.stock_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("repository_app")
 @SpringBootApplication
-public class RepositoryAppApplication {
+public class StockAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RepositoryAppApplication.class, args);
+		SpringApplication.run(StockAppApplication.class, args);
 	}
 
 }
