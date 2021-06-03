@@ -1,19 +1,29 @@
 package com.birdapp.bp.repository_app.domain.model.order;
 
+import lombok.Getter;
+
+@Getter
 public enum OrderStatus {
 
-    /** WAITING. */
-    WAITING,
+    /** NEW. */
+    NEW(0),
 
-    /** PENDING. */
-    PENDING,
+    /** WAITING. */
+    WAITING(1),
 
     /** WORK IN PROGRESS. */
-    WORK_IN_PROGRESS,
+    WORK_IN_PROGRESS(2),
 
     /** COMPLETED. */
-    COMPLETED,
+    COMPLETED(3),
 
     /** CANCELLED. */
-    CANCELLED
+    CANCELLED(4)
+
+    private int value;
+
+	private OrderStatus(int value) {
+		this.value = value;
+	}
+    
 }

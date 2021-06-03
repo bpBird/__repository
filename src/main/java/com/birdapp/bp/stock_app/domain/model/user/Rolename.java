@@ -7,4 +7,5 @@ public enum Rolename {
 
     /** USER. */
     USER
+    
 }
