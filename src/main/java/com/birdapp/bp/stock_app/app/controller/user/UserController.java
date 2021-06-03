@@ -15,22 +15,64 @@ import com.birdapp.bp.repository_app.domain.service.user.IUserService;
  *
  */
 @Controller
+@RequiredArgsConstructor
 public class UserController<F extends UserForm> {
 
-	@Autowired
-	IUserService iUserService;
+	private final IUserService iUserService;
 
+	/**
+	 * RETURN THE USER LIST VIEW.
+	 *
+	 * @param model
+	 * @return userList view
+	 */
 	@GetMapping("/user/list")
 	String getUserList (Model model) {
-		//TODO get the searching requirements and return list view (no-param means all)
-//		List<User> userList = iUserService.getUserList();
-//		model.addAttribute(userList);
+		// TODO get the searching requirements and return list view (method w/ no-param gets all)
+		List<User> userList = iUserService.getUserList();
+		model.addAttribute(userList);
 		return "user/list";
 	}
 
-	@GetMapping("/user/edit-modal")
-	String editUser (Model model) {
-		//TODO get the target object id and return edit view(modal window w/ form)
-		return "user/edit";
+	/**
+	 * RETURN THE REGISTER VIEW OR EDIT VIEW.
+	 *
+	 * @param userId
+	 * @param organizationId
+	 * @param model
+	 * @return user
+	 */
+	@GetMapping("/user/modal/{userId}")
+	String getUser(@PathVariable("userId") Long userId, Long organizationId ,Model model) {
+		// TODO get the target object id and return info view (modal window)
+		// use stream mapping and Optional object
+		return "user/list";
+	}
+
+	/**
+	 * RETURN USER LIST VIEW W/ SAVED MESSAGE.
+	 *
+	 * @param userId
+	 * @param model
+	 * @return userList view
+	 */
+	@GetMapping("/user/modal/save/{userId}")
+	String saveUser(@PathVariable("userId") Long userId, Model model) {
+		// TODO get the target object id and return edit view (modal window w/ form)
+		// use stream mapping and Optional object
+		return "user/list"; // redirect to top with success message (list view)
+	}
+
+	/**
+	 * RETURN USER LIST VIEW W/ DELETED MESSAGE.
+	 *
+	 * @param userId
+	 * @param model
+	 * @return userList view
+	 */
+	@GetMapping("/user/modal/delete/{userId}")
+	String deleteUser(@PathVariable("userId") Long userId, Model model) {
+		// TODO get the target object id and return info view (modal window)
+		return "user/list"; // redirect to top with success message(list view)
 	}
 }
