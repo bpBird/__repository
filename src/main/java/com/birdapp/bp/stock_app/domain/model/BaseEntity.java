@@ -14,7 +14,7 @@ public abstract class BaseEntity extends CoreEntity {
 
 	/** ORGANIZATION ID. */
 	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
+	@JoinColumn(name = "ORGANIZATION_ID")
+	private Organization organization;
 
 }

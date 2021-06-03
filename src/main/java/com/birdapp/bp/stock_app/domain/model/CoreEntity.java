@@ -40,11 +40,11 @@ public abstract class CoreEntity implements Serializable {
 	/** UPDATED BY. */
 	@LastModifiedBy
 	@Column(name = "UPDATED_BY")
-	protected Long updatedBy;
+	protected Long lastUpdatedBy;
 
 	/** UPDATED AT. */
 	// @Version
 	@LastModifiedDate
 	@Column(name = "UPDATED_AT")
-	protected LocalDateTime updatedAt;
+	protected LocalDateTime lastUpdatedAt;
 }
