@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.birdapp.bp.repository_app.domain.model.BaseEntity;
+import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,20 +23,20 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "order_items")
+@Table(name = "ORDER_ITEMS")
 @Getter
 @Setter
 public class OrderItem extends BaseEntity{
 
 	/** ORDER ID. */
-	@OneToOne(mappedBy = "orders", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	@JoinColumn(name = "orders_id")
+	@ManyToOne
+	@JoinColumn(name = "ORDER_ID")
 	private Long orderId;
 
-	/** PRODUCT ID. */
+	/** PRODUCT ITEM ID. */
 	@ManyToOne
-	@JoinColumn(name = "product_items_id")
-	private Long productItemId;
+	@JoinColumn(name = "PRODUCT_ITEM_ID")
+	private ProductItem ProductItem;
 
 	/** QUANTITY. */
 	@Column(name = "QUANTITY")
@@ -44,4 +45,5 @@ public class OrderItem extends BaseEntity{
 	/** TOTAL PRICE. */
 	@Column(name = "TOTAL_PRICE")
 	private BigDecimal totalPrice;
+
 }

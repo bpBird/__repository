@@ -47,4 +47,5 @@ public abstract class CoreEntity implements Serializable {
 	@LastModifiedDate
 	@Column(name = "UPDATED_AT")
 	protected LocalDateTime lastUpdatedAt;
+	
 }

@@ -16,7 +16,7 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "customers")
+@Table(name = "CUSTOMERS")
 @Getter
 @Setter
 public class Customer extends AddressEntity {
@@ -28,4 +28,10 @@ public class Customer extends AddressEntity {
 	/** FIRSTNAME. */
 	@Column(name = "FIRSTNAME")
 	private String firstname;
+
+	/** ORDERS BELONG TO CUSTOMER. */
+	@OneToMany(mappedBy="customer")
+	@Transient
+	private List<Order> orders;
+
 }

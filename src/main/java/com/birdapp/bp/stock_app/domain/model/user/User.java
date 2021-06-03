@@ -20,15 +20,10 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 @Getter
 @Setter
 public class User extends ContactEntity {
-
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
 
 	/** LASTNAME. */
 	@Column(name = "LASTNAME")
@@ -39,14 +34,20 @@ public class User extends ContactEntity {
 	private String firstname;
 
 	/** PASSWORD. */
+	@Column(name = "PASSWORD")
 	private String password;
 
-	/** BCRYPT PASSWORD. */
-	@Column(name = "BCRYPT_PASSWORD")
-	private String bcryptPassword;
+	// /** PASSWORD. */
+	// @Transient
+	// private String password;
+
+	// /** BCRYPT PASSWORD. */
+	// @Column(name = "BCRYPT_PASSWORD")
+	// private String bcryptPassword;
 
 	/** ROLE. */
 	@Column(name = "ROLENAME")
 	@Enumerated(EnumType.STRING)
 	private Rolename rolename;
+	
 }

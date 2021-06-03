@@ -18,7 +18,7 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "manufacturer_staff")
+@Table(name = "MANUFACTURER_STAFF")
 @Getter
 @Setter
 public class ManufacturerStaff extends ContactEntity {
@@ -33,6 +33,6 @@ public class ManufacturerStaff extends ContactEntity {
 
 	/** MANUFACTURER ID. */
 	@ManyToOne
-	@JoinColumn(name = "MANUFACTURERS_ID")
-	private Long manufacturerId;
+	@JoinColumn(name = "MANUFACTURER_ID")
+	private Manufacturer manufacturer;
 }

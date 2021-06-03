@@ -23,20 +23,15 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "orders")
+@Table(name = "ORDERS")
 @Getter
 @Setter
 public class Order extends BaseEntity{
 
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
-
 	/** CUSTOMER ID. */
 	@ManyToOne
-	@JoinColumn(name = "CUSTOMERS_ID")
-	private Long customerId;
+	@JoinColumn(name = "CUSTOMER_ID")
+	private Customer customer;
 
 	/** TOTAL PRICE. */
 	@Column(name = "TOTAL_PRICE")
@@ -47,7 +42,13 @@ public class Order extends BaseEntity{
 	private LocalDateTime orderDate;
 
 	/** ORDER STATUS. */
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "ORDER_STATUS")
 	private OrderStatus orderStatus;
+
+	/** ORDER ITEMS BELONG TO ORDER. */
+	@OneToMany(mappedBy="order")
+	@Transient
+	private List<OrderItem> orderItems;
+	
 }

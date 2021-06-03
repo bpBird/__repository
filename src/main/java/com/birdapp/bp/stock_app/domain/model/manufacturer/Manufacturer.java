@@ -18,18 +18,18 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "manufacturers")
+@Table(name = "MANUFACTURERS")
 @Getter
 @Setter
 public class Manufacturer extends AddressEntity{
 
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-    private Long organizationId;
-
     /** NAME. */
     @Column(name = "NAME")
     private String name;
+
+    /** PRODUCT ITEMS BELONG TO MANUFACTURER. */
+    @OneToMany(mappedBy="manufacturer")
+    @Transient
+    private List<ProductItem> productItems;
 
 }

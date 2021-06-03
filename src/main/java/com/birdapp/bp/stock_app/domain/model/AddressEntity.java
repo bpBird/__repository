@@ -49,4 +49,5 @@ public abstract class AddressEntity extends ContactEntity{
 	/** POSTAL CODE. */
 	@Column(name = "POSTAL_CODE")
 	protected String postalCode;
+	
 }

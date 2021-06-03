@@ -18,17 +18,18 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "product_categories")
+@Table(name = "PRODUCT_CATEGORIES")
 @Getter
 @Setter
 public class ProductCategory extends BaseEntity{
 
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
-
 	/** NAME. */
 	@Column(name = "NAME")
 	private String name;
+
+	/** PRODUCTS BELONG TO PRODUCT CATEGORIES. */
+	@OneToMany(mappedBy="productCategory")
+	@Transient
+	private List<ProductItem> productItems;
+	
 }

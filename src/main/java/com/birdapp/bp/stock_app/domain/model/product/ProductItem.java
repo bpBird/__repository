@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.birdapp.bp.repository_app.domain.model.BaseEntity;
+import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,15 +21,10 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "product_items")
+@Table(name = "PRODUCT_ITEMS")
 @Getter
 @Setter
 public class ProductItem extends BaseEntity{
-
-	/** ORGANIZATION ID. */
-	@ManyToOne
-	@JoinColumn(name = "ORGANIZATIONS_ID")
-	private Long organizationId;
 
 	/** NAME. */
 	@Column(name = "NAME")
@@ -37,12 +33,12 @@ public class ProductItem extends BaseEntity{
 	/** CATEGORY ID. */
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_CATEGORIES_ID")
-	private Long productCategoryId;
+	private ProductCategory productCategory;
 
 	/** MANUFACTURER ID. */
 	@ManyToOne
 	@JoinColumn(name = "MANUFACTURER_ID")
-	private Long manufacturerId;
+	private Manufacturer manufacturer;
 
 	/** BUYING PRICE. */
 	@Column(name = "BUYING_PRICE")
@@ -59,4 +55,10 @@ public class ProductItem extends BaseEntity{
 	/** ARRIVING STOCK. */
 	@Column(name = "ARRIVING_STOCK")
 	private int arrivingStock;
+
+	/** ORDERED ITEMS ASSOCIATED WITH PRODUCT ITEM. */
+	@OneToMany(mappedBy="productItem")
+	@Transient
+	private List<OrderItem> orderItems;
+
 }

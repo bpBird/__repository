@@ -24,4 +24,5 @@ public abstract class ContactEntity extends BaseEntity {
 	/** EMAIL. */
 	@Column(name = "EMAIL")
 	protected String email;
+	
 }
