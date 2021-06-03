@@ -1,10 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="ja" xmlns:th="http://www.thymeleaf.org">
-	<div th:fragment=”side-bar”>
-		<div id="side-bar" class="container">
-			<div class="row">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<body>
+		<div id="side-bar" layout:fragment="side-bar">
+						<div class="row">
 				<div class= "col-12">
-					<div class="logo">__repository</div>
+					<div class="logo">__stock</div>
 				</div>
 			</div>
 			<div class="row">
@@ -37,9 +39,9 @@
 			</div>
 			<div class="row">
 				<div class="col-4 setting-icon">
-					<img> <!-- ネジアイコン -->
+					<img> ネジアイコン
 				</div>
 			</div>
 		</div>
-	</div>
+	</body>
 </html>
