@@ -1,5 +1,6 @@
 package com.birdapp.bp.stock_app.domain.specification.customer;
 
+import com.birdapp.bp.stock_app.domain.model.ContactEntity;
 import com.birdapp.bp.stock_app.domain.model.customer.Customer;
 import com.birdapp.bp.stock_app.domain.specification.AddressSpecification;
 
@@ -14,7 +15,7 @@ import org.thymeleaf.util.StringUtils;
  */
 public class CustomerSpecification extends AddressSpecification<Customer> {
 
-	public Specification<Customer> hasOrganizationId(Long organizationId) {
+	public Specification<ContactEntity> hasOrganizationId(Long organizationId) {
 		return organizationId == null ? null : (root, query, cb) -> {
 			return cb.equal(root.get("organizationId"), organizationId);
 		};

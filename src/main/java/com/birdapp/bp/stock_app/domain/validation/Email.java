@@ -19,7 +19,7 @@ import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
  *
  */
 @Documented
-@Constraint(validatedBy = {EmailValidator.class})
+// @Constraint(validatedBy = {EmailValidator.class})
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @ReportAsSingleViolation

@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import com.birdapp.bp.stock_app.domain.model.customer.Customer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -20,32 +21,33 @@ public class CustomerService implements ICustomerService {
 
 	@Override
 	public List<Customer> getCustomerList() {
-		// TODO 自動生成されたメソッド・スタブ
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Customer getCustomer() {
-		// TODO 自動生成されたメソッド・スタブ
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean registerCustomer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+	public Customer saveCustomer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public boolean updateCustomer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+	public Customer updateCustomer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public boolean deleteCustomer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+	public Customer deleteCustomer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 
 }
