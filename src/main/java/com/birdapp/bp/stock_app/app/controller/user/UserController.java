@@ -6,12 +6,11 @@ import com.birdapp.bp.stock_app.app.form.user.UserForm;
 import com.birdapp.bp.stock_app.domain.model.user.User;
 import com.birdapp.bp.stock_app.domain.service.user.IUserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import lombok.RequiredArgsConstructor;
 
 /**
  * CONTROLLER FOR USERS.
@@ -20,10 +19,10 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @Controller
-@RequiredArgsConstructor
 public class UserController<F extends UserForm> {
 
-	private final IUserService iUserService;
+	@Autowired
+	IUserService iUserService;
 
 	/**
 	 * RETURN THE USER LIST VIEW.
@@ -80,4 +79,5 @@ public class UserController<F extends UserForm> {
 		// TODO get the target object id and return info view (modal window)
 		return "user/list"; // redirect to top with success message(list view)
 	}
+	
 }
