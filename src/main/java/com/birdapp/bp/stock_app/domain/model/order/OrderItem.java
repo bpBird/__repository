@@ -29,7 +29,7 @@ public class OrderItem extends BaseEntity{
 	/** ORDER ID. */
 	@ManyToOne
 	@JoinColumn(name = "ORDER_ID")
-	private Long orderId;
+	private Order order;
 
 	/** PRODUCT ITEM ID. */
 	@ManyToOne
