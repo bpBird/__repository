@@ -1,10 +1,22 @@
-package com.birdapp.bp.repository_app.domain.model.organization;
+package com.birdapp.bp.stock_app.domain.model.organization;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
-import com.birdapp.bp.repository_app.domain.model.CoreEntity;
+import com.birdapp.bp.stock_app.domain.model.CoreEntity;
+import com.birdapp.bp.stock_app.domain.model.customer.Customer;
+import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
+import com.birdapp.bp.stock_app.domain.model.order.Order;
+import com.birdapp.bp.stock_app.domain.model.product.ProductCategory;
+import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
+import com.birdapp.bp.stock_app.domain.model.user.User;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package com.birdapp.bp.repository_app.domain.service.product;
+package com.birdapp.bp.stock_app.domain.service.product;
 
 import java.util.List;
 
-import com.birdapp.bp.repository_app.domain.model.product.ProductItem;
+import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
 
 /**
  * PRODUCT ITEM SERVICE INTERFACE.

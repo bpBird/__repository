@@ -1,1 +1,1 @@
-package com.birdapp.bp.repository_app.domain.specification;
+package com.birdapp.bp.stock_app.domain.specification;

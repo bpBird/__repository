@@ -1,4 +1,4 @@
-package com.birdapp.bp.repository_app.domain.model;
+package com.birdapp.bp.stock_app.domain.model;
 
 import java.util.Locale.IsoCountryCode;
 
@@ -49,5 +49,5 @@ public abstract class AddressEntity extends ContactEntity{
 	/** POSTAL CODE. */
 	@Column(name = "POSTAL_CODE")
 	protected String postalCode;
-	
+
 }

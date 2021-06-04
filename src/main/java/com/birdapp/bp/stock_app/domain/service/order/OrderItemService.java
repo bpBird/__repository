@@ -1,12 +1,12 @@
-package com.birdapp.bp.repository_app.domain.service.order;
+package com.birdapp.bp.stock_app.domain.service.order;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
 
-import com.birdapp.bp.repository_app.domain.model.order.OrderItem;
+import org.springframework.stereotype.Service;
 
 /**
  * ORDER ITEM SERVICE IMPLEMENTATION.

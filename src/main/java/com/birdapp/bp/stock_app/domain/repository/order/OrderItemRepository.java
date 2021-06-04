@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.repository.order;
+package com.birdapp.bp.stock_app.domain.repository.order;
+
+import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
-
-import com.birdapp.bp.repository_app.domain.model.order.OrderItem;
 
 /**
  * ORDER ITEM REPOSITORY INTERFACE.

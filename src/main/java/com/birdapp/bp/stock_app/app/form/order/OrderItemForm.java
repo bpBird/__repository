@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.app.form.order;
+package com.birdapp.bp.stock_app.app.form.order;
 
 import java.math.BigDecimal;
 
 import javax.validation.constraints.NotNull;
 
-import com.birdapp.bp.repository_app.app.form.BaseForm;
+import com.birdapp.bp.stock_app.app.form.BaseForm;
 
 import lombok.Getter;
 import lombok.Setter;

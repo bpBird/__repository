@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.specification.customer;
+package com.birdapp.bp.stock_app.domain.specification.customer;
+
+import com.birdapp.bp.stock_app.domain.model.customer.Customer;
+import com.birdapp.bp.stock_app.domain.specification.AddressSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.customer.Customer;
-import com.birdapp.bp.repository_app.domain.specification.AddressSpecification;
 
 /**
  * SPECIFICATION FOR CUSTOMER.

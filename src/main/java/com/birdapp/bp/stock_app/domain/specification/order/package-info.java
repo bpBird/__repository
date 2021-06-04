@@ -1,1 +1,1 @@
-package com.birdapp.bp.repository_app.domain.specification.order;
+package com.birdapp.bp.stock_app.domain.specification.order;

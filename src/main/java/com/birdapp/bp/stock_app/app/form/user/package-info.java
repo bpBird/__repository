@@ -1,1 +1,1 @@
-package com.birdapp.bp.repository_app.app.form.user;
+package com.birdapp.bp.stock_app.app.form.user;

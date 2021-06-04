@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.specification;
+package com.birdapp.bp.stock_app.domain.specification;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.jpa.domain.Specification;
+import com.birdapp.bp.stock_app.domain.model.CoreEntity;
 
-import com.birdapp.bp.repository_app.domain.model.CoreEntity;
+import org.springframework.data.jpa.domain.Specification;
 
 public abstract class CoreSpecification <T extends CoreEntity>{
 

@@ -1,15 +1,19 @@
-package com.birdapp.bp.repository_app.domain.model.product;
+package com.birdapp.bp.stock_app.domain.model.product;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
-import com.birdapp.bp.repository_app.domain.model.BaseEntity;
+import com.birdapp.bp.stock_app.domain.model.BaseEntity;
 import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
+import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
 
 import lombok.Getter;
 import lombok.Setter;

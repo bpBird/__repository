@@ -1,15 +1,15 @@
-package com.birdapp.bp.repository_app.app.controller.manufacturer;
+package com.birdapp.bp.stock_app.app.controller.manufacturer;
 
 import java.util.List;
+
+import com.birdapp.bp.stock_app.app.form.manufacturer.ManufacturerForm;
+import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
+import com.birdapp.bp.stock_app.domain.service.manufacturer.IManufacturerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.birdapp.bp.repository_app.app.form.manufacturer.ManufacturerForm;
-import com.birdapp.bp.repository_app.domain.model.manufacturer.Manufacturer;
-import com.birdapp.bp.repository_app.domain.service.manufacturer.IManufacturerService;
 
 /**
  * CONTROLLER FOR MANUFACTURER.

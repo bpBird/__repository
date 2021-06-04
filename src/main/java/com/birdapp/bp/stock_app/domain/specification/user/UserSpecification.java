@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.specification.user;
+package com.birdapp.bp.stock_app.domain.specification.user;
+
+import com.birdapp.bp.stock_app.domain.model.user.User;
+import com.birdapp.bp.stock_app.domain.specification.ContactSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.user.User;
-import com.birdapp.bp.repository_app.domain.specification.ContactSpecification;
 
 public class UserSpecification extends ContactSpecification<User> {
 

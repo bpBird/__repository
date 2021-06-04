@@ -1,1 +1,1 @@
-package com.birdapp.bp.repository_app.domain.repository.customer;
+package com.birdapp.bp.stock_app.domain.repository.customer;

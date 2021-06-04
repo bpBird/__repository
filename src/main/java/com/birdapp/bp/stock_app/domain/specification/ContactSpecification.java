@@ -1,9 +1,9 @@
-package com.birdapp.bp.repository_app.domain.specification;
+package com.birdapp.bp.stock_app.domain.specification;
+
+import com.birdapp.bp.stock_app.domain.model.ContactEntity;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.ContactEntity;
 
 /**
  * SPECIFICATION FOR CONTACT.

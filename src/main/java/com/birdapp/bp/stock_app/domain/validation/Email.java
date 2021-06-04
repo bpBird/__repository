@@ -1,4 +1,4 @@
-package com.birdapp.bp.repository_app.domain.validation;
+package com.birdapp.bp.stock_app.domain.validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

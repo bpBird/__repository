@@ -1,12 +1,12 @@
-package com.birdapp.bp.repository_app.domain.service.product;
+package com.birdapp.bp.stock_app.domain.service.product;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
 
-import com.birdapp.bp.repository_app.domain.model.product.ProductItem;
+import org.springframework.stereotype.Service;
 
 /**
  * PRODUCT ITEM SERVICE IMPLEMENTATION.

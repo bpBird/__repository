@@ -1,4 +1,4 @@
-package com.birdapp.bp.repository_app.app.form;
+package com.birdapp.bp.stock_app.app.form;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

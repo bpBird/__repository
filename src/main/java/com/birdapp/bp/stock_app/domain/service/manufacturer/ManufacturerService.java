@@ -1,12 +1,12 @@
-package com.birdapp.bp.repository_app.domain.service.manufacturer;
+package com.birdapp.bp.stock_app.domain.service.manufacturer;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
 
-import com.birdapp.bp.repository_app.domain.model.manufacturer.Manufacturer;
+import org.springframework.stereotype.Service;
 
 /**
  * MANUFACTURER SERVICE IMPLEMENTATION.

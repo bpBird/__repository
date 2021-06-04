@@ -1,12 +1,12 @@
-package com.birdapp.bp.repository_app.domain.specification.product;
+package com.birdapp.bp.stock_app.domain.specification.product;
 
 import java.math.BigDecimal;
 
+import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
+import com.birdapp.bp.stock_app.domain.specification.BaseSpecification;
+
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.product.ProductItem;
-import com.birdapp.bp.repository_app.domain.specification.BaseSpecification;
 
 public class ProductItemSpecification extends BaseSpecification<ProductItem> {
 

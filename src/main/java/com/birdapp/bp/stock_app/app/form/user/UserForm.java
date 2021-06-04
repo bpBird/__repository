@@ -1,11 +1,11 @@
-package com.birdapp.bp.repository_app.app.form.user;
+package com.birdapp.bp.stock_app.app.form.user;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
-import com.birdapp.bp.repository_app.app.form.ContactForm;
-import com.birdapp.bp.repository_app.domain.model.user.Rolename;
+import com.birdapp.bp.stock_app.app.form.ContactForm;
+import com.birdapp.bp.stock_app.domain.model.user.Rolename;
 
 import lombok.Getter;
 import lombok.Setter;

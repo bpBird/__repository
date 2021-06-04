@@ -1,8 +1,8 @@
-package com.birdapp.bp.repository_app.domain.service.manufacturer;
+package com.birdapp.bp.stock_app.domain.service.manufacturer;
 
 import java.util.List;
 
-import com.birdapp.bp.repository_app.domain.model.manufacturer.ManufacturerStaff;
+import com.birdapp.bp.stock_app.domain.model.manufacturer.ManufacturerStaff;
 
 /**
  * MANUFACTURER STAFF SERVICE INTERFACE.

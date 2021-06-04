@@ -1,12 +1,12 @@
-package com.birdapp.bp.repository_app.domain.service.customer;
+package com.birdapp.bp.stock_app.domain.service.customer;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.model.customer.Customer;
 
-import com.birdapp.bp.repository_app.domain.model.customer.Customer;
+import org.springframework.stereotype.Service;
 
 /**
  * CUSTOMER SERVICE IMPLEMENTATION.

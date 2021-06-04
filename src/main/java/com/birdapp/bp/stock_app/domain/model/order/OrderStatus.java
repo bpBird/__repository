@@ -1,4 +1,4 @@
-package com.birdapp.bp.repository_app.domain.model.order;
+package com.birdapp.bp.stock_app.domain.model.order;
 
 import lombok.Getter;
 
@@ -18,7 +18,7 @@ public enum OrderStatus {
     COMPLETED(3),
 
     /** CANCELLED. */
-    CANCELLED(4)
+    CANCELLED(4);
 
     private int value;
 

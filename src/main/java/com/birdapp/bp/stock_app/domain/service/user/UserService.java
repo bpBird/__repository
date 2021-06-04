@@ -1,14 +1,14 @@
-package com.birdapp.bp.repository_app.domain.service.user;
+package com.birdapp.bp.stock_app.domain.service.user;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.birdapp.bp.stock_app.domain.model.user.User;
+import com.birdapp.bp.stock_app.domain.repository.user.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.birdapp.bp.repository_app.domain.model.user.User;
-import com.birdapp.bp.repository_app.domain.repository.user.UserRepository;
 
 /**
  * USER SERVICE IMPLEMENTATION.

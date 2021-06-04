@@ -1,14 +1,14 @@
-package com.birdapp.bp.repository_app.app.form.order;
+package com.birdapp.bp.stock_app.app.form.order;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotNull;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.birdapp.bp.stock_app.app.form.BaseForm;
+import com.birdapp.bp.stock_app.domain.model.order.OrderStatus;
 
-import com.birdapp.bp.repository_app.app.form.BaseForm;
-import com.birdapp.bp.repository_app.domain.model.order.OrderStatus;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
 import lombok.Setter;

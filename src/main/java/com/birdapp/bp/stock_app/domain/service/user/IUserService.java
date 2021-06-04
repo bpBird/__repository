@@ -1,8 +1,8 @@
-package com.birdapp.bp.repository_app.domain.service.user;
+package com.birdapp.bp.stock_app.domain.service.user;
 
 import java.util.List;
 
-import com.birdapp.bp.repository_app.domain.model.user.User;
+import com.birdapp.bp.stock_app.domain.model.user.User;
 
 /**
  * USER SERVICE INTERFACE.

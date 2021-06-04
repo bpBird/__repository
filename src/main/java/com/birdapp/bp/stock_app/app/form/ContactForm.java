@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.app.form;
+package com.birdapp.bp.stock_app.app.form;
 
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.birdapp.bp.repository_app.domain.validation.Email;
+import com.birdapp.bp.stock_app.domain.validation.Email;
 
 import lombok.Getter;
 import lombok.Setter;

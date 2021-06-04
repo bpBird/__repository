@@ -1,8 +1,8 @@
-package com.birdapp.bp.repository_app.app.form.manufacturer;
+package com.birdapp.bp.stock_app.app.form.manufacturer;
 
 import javax.validation.constraints.NotNull;
 
-import com.birdapp.bp.repository_app.app.form.AddressForm;
+import com.birdapp.bp.stock_app.app.form.AddressForm;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,12 +1,17 @@
-package com.birdapp.bp.repository_app.app.controller.user;
+package com.birdapp.bp.stock_app.app.controller.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
+import com.birdapp.bp.stock_app.app.form.user.UserForm;
+import com.birdapp.bp.stock_app.domain.model.user.User;
+import com.birdapp.bp.stock_app.domain.service.user.IUserService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import com.birdapp.bp.repository_app.app.form.user.UserForm;
-import com.birdapp.bp.repository_app.domain.service.user.IUserService;
+import lombok.RequiredArgsConstructor;
 
 /**
  * CONTROLLER FOR USERS.

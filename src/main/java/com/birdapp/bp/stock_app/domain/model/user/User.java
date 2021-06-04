@@ -1,14 +1,12 @@
-package com.birdapp.bp.repository_app.domain.model.user;
+package com.birdapp.bp.stock_app.domain.model.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.repository_app.domain.model.ContactEntity;
+import com.birdapp.bp.stock_app.domain.model.ContactEntity;
 
 import lombok.Getter;
 import lombok.Setter;

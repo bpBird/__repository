@@ -1,13 +1,13 @@
-package com.birdapp.bp.repository_app.domain.repository.customer;
+package com.birdapp.bp.stock_app.domain.repository.customer;
+
+import com.birdapp.bp.stock_app.domain.model.customer.Customer;
+import com.birdapp.bp.stock_app.domain.specification.customer.CustomerSpecification;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
-
-import com.birdapp.bp.repository_app.domain.model.customer.Customer;
-import com.birdapp.bp.repository_app.domain.specification.customer.CustomerSpecification;
 
 /**
  * CUSTOMER REPOSITORY INTERFACE.

@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.specification.manufacturer;
+package com.birdapp.bp.stock_app.domain.specification.manufacturer;
+
+import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
+import com.birdapp.bp.stock_app.domain.specification.AddressSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.manufacturer.Manufacturer;
-import com.birdapp.bp.repository_app.domain.specification.AddressSpecification;
 
 public class ManufacturerSpecification extends AddressSpecification<Manufacturer>{
 

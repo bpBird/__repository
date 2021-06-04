@@ -1,11 +1,11 @@
-package com.birdapp.bp.repository_app.app.form.product;
+package com.birdapp.bp.stock_app.app.form.product;
 
 import java.math.BigDecimal;
 
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.NotNull;
 
-import com.birdapp.bp.repository_app.app.form.BaseForm;
+import com.birdapp.bp.stock_app.app.form.BaseForm;
 
 import lombok.Getter;
 import lombok.Setter;

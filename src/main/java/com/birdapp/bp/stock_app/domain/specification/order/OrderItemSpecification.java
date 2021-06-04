@@ -1,11 +1,11 @@
-package com.birdapp.bp.repository_app.domain.specification.order;
+package com.birdapp.bp.stock_app.domain.specification.order;
 
 import java.math.BigDecimal;
 
-import org.springframework.data.jpa.domain.Specification;
+import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
+import com.birdapp.bp.stock_app.domain.specification.BaseSpecification;
 
-import com.birdapp.bp.repository_app.domain.model.order.OrderItem;
-import com.birdapp.bp.repository_app.domain.specification.BaseSpecification;
+import org.springframework.data.jpa.domain.Specification;
 
 public class OrderItemSpecification extends BaseSpecification<OrderItem> {
 

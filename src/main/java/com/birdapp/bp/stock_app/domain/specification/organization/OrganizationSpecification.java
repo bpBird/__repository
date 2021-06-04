@@ -1,10 +1,10 @@
-package com.birdapp.bp.repository_app.domain.specification.organization;
+package com.birdapp.bp.stock_app.domain.specification.organization;
+
+import com.birdapp.bp.stock_app.domain.model.organization.Organization;
+import com.birdapp.bp.stock_app.domain.specification.CoreSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
-
-import com.birdapp.bp.repository_app.domain.model.organization.Organization;
-import com.birdapp.bp.repository_app.domain.specification.CoreSpecification;
 
 public class OrganizationSpecification extends CoreSpecification<Organization>{
 

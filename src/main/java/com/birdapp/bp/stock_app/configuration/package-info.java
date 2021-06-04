@@ -1,1 +1,1 @@
-package com.birdapp.bp.repository_app.configuration;
+package com.birdapp.bp.stock_app.configuration;
