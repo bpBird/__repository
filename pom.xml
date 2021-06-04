@@ -11,7 +11,7 @@
 	<groupId>com.birdapp.bp</groupId>
 	<artifactId>stock_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>__stock</name>
+	<name>stock_app</name>
 	<description>stock management application</description>
 
 	<properties>
@@ -55,23 +55,35 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>5.0.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
+			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.2.0.Alpha1</version>
+			<version>7.0.1.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish</groupId>
-			<artifactId>javax.el</artifactId>
-			<version>3.0.0</version>
+			<artifactId>jakarta.el</artifactId>
+			<version>4.0.0-RC2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
