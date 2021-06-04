@@ -18,6 +18,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomerRepository
 		extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
-
-	public Page<Customer> findAll(CustomerSpecification specification, Pageable pageable);
 }
