@@ -4,42 +4,62 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<body>
 		<div id="side-bar" layout:fragment="side-bar">
-						<div class="row">
-				<div class= "col-12">
+			<div class="container">
+				<div class="row">
 					<div class="logo">__stock</div>
 				</div>
-			</div>
-			<div class="row">
-				<ul class="menu-list">
-					<li class="menu-item">
-						<div class= "col-3">
-							<div class="menu-icon">✔️</div>
-						</div>
-						<div class= "col-9">
-							<div class="menu-title"><a href="#">注文一覧</a></div>
-						</div>
-					</li>
-					<li class="menu-item">
-						<div class= "col-3">
-							<div class="menu-icon">✔️</div>
-						</div>
-						<div class= "col-9">
-							<div class="menu-title"><a href="#">顧客一覧</a></div>
-						</div>
-					</li>
-					<li class="menu-item">
-						<div class= "col-3">
-							<div class="menu-icon">✔️</div>
-						</div>
-						<div class= "col-9">
-							<div class="menu-title"><a href="#">商品一覧</a></div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="row">
-				<div class="col-4 setting-icon">
-					<img> ネジアイコン
+				<div class="row">
+					<ul class="menu-list">
+						<li class="menu-item">
+							<div class= "col-3">
+								<div class="menu-icon">✔️</div>
+							</div>
+							<div class= "col-9">
+								<div class="menu-title"><a href="#">Orders</a></div>
+							</div>
+						</li>
+						<li class="menu-item">
+							<div class= "col-3">
+								<div class="menu-icon">✔️</div>
+							</div>
+							<div class= "col-9">
+								<div class="menu-title"><a href="#">Customers</a></div>
+							</div>
+						</li>
+						<li class="menu-item">
+							<div class= "col-3">
+								<div class="menu-icon">✔️</div>
+							</div>
+							<div class= "col-9">
+								<div class="menu-title"><a href="#">Products</a></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
+					<ul class="settings-list list-group list-group-horizontal">
+						<li class="setting-item">
+							<div class="user">
+								<a href="../templates/settings/user-info.html" th:href="@{/settings/user-info/{userId}(userId=${user.id})}">
+									<img src="../../resources/static/img/account_icon.png" alt="user" title="user" th:src="@{/img/account_icon.png}">
+								</a>
+							</div>
+						</li>
+						<li class="setting-item">
+							<div class="music">
+								<a href="../templates/settings/music.html" th:href="@{/settings/music/{userId}(userId=${user.id})}">
+									<img src="../../resources/static/img/disk_icon.png" alt="music" title="music" th:src="@{/img/disk_icon.png}">
+								</a>
+							</div>
+						</li>
+						<li class="setting-item">
+							<div class="setting">
+								<a href="../templates/settings/setting.html" th:href="@{/settings/setting/{userId}(userId=${user.id})}">
+									<img src="../../resources/static/img/gear_icon.png" alt="setting" title="setting" th:src="@{/img/gear_icon.png}">
+								</a>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

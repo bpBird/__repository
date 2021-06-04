@@ -14,13 +14,16 @@
 		<title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">__stock</title>
 	</head>
 	<body>
-		<div id="side-bar" layout:replace="side-bar::side-bar"></div>
-		<div id="top-bar" layout:replace="top-bar::top-bar"></div>
-		<div class="container">
-			<div layout:fragment="content" th:remove="tag"></div>
+		<div class="container main-container">
+			<div class="row">
+				<div class="side-bar col-3" id="side-bar" layout:insert="side-bar::side-bar"></div>
+				<div class="top-bar col-9" id="top-bar" layout:insert="top-bar::top-bar"></div>
+				<div class="content col-9">
+					<div layout:fragment="content" th:remove="tag"></div>
+				</div>
+			</div>
+			<div id="footer" layout:insert="footer::footer"></div>
 		</div>
-		<div id="footer" layout:replace="footer::footer"></div>
-
         <!-- 
         <script type="text/javascript" th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
