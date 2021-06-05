@@ -30,7 +30,7 @@ a {
 	text-decoration: none;
 }
 
-a :hover {
+a:hover {
 	color: #189CC3;
 }
 
@@ -54,28 +54,29 @@ a :hover {
 
 .menu-item {
 	margin-bottom: 15px;
-}
-
-.menu-icon {
-	float: left;
-	margin-bottom: 15px;
-}
-
-.menu-title {
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 }
 
 .settings-list {
-	float: right;
+	display: inline;
 }
 
-.setting-item img{
+.setting-item {
 	height: 20px;
 	width: 20px;
 	float: right;
+	margin-right: 30px;
+}
+
+.settings-icon {
+	fill: white;
+}
+
+.setting-item :hover {
+	fill: #189CC3;
 }
 
 /* top-bar */
