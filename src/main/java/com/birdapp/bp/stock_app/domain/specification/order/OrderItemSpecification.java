@@ -3,11 +3,16 @@ package com.birdapp.bp.stock_app.domain.specification.order;
 import java.math.BigDecimal;
 
 import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
-import com.birdapp.bp.stock_app.domain.specification.BaseSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 
-public class OrderItemSpecification extends BaseSpecification<OrderItem> {
+/**
+ * SPECIFICATION FOR ORDER ITEM.
+ *
+ * @author bp
+ *
+ */
+public class OrderItemSpecification {
 
 	public Specification<OrderItem> hasOrderId(Long orderId) {
 		return orderId == null ? null : (root, query, cb) -> {

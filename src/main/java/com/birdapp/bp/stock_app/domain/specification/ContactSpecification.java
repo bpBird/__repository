@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.specification;
 
-import com.birdapp.bp.stock_app.domain.model.ContactEntity;
+import com.birdapp.bp.stock_app.domain.model.ContactField;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
@@ -11,15 +11,15 @@ import org.thymeleaf.util.StringUtils;
  * @author bp
  *
  */
-public abstract class ContactSpecification<T> extends BaseSpecification<ContactEntity>{
+public interface ContactSpecification<T extends ContactField> {
 
-	public Specification<T> hasPhoneNumber(String phoneNumber) {
+	default Specification<T> hasPhoneNumber(String phoneNumber) {
 		return StringUtils.isEmpty(phoneNumber) ? null : (root, query, cb) -> {
 			return cb.equal(root.get("phoneNumber"), phoneNumber);
 		};
 	}
 
-	public Specification<T> hasEmail(String email) {
+	default Specification<T> hasEmail(String email) {
 		return StringUtils.isEmpty(email) ? null : (root, query, cb) -> {
 			return cb.equal(root.get("email"), email);
 		};

@@ -3,18 +3,12 @@ package com.birdapp.bp.stock_app.domain.specification.product;
 import java.math.BigDecimal;
 
 import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
-import com.birdapp.bp.stock_app.domain.specification.BaseSpecification;
+import com.birdapp.bp.stock_app.domain.specification.OrganizationSpecification;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;
 
-public class ProductItemSpecification extends BaseSpecification<ProductItem> {
-
-	public Specification<ProductItem> hasOrganizationId(Long organizationId) {
-		return organizationId == null ? null : (root, query, cb) -> {
-			return cb.equal(root.get("organizationId"), organizationId);
-		};
-	}
+public class ProductItemSpecification implements OrganizationSpecification<ProductItem> {
 
 	public Specification<ProductItem> containsName(String name) {
 		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
