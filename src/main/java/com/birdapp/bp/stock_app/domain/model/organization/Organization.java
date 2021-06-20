@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.birdapp.bp.stock_app.domain.model.CoreEntity;
+import com.birdapp.bp.stock_app.domain.model.BaseEntity;
 import com.birdapp.bp.stock_app.domain.model.customer.Customer;
 import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
 import com.birdapp.bp.stock_app.domain.model.order.Order;
@@ -31,7 +31,7 @@ import lombok.Setter;
 @Table(name = "organizations")
 @Getter
 @Setter
-public class Organization extends CoreEntity{
+public class Organization extends BaseEntity {
 
 	/** NAME. */
 	@Column(name = "NAME")

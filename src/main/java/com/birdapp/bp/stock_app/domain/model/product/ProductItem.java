@@ -12,8 +12,10 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.birdapp.bp.stock_app.domain.model.BaseEntity;
+import com.birdapp.bp.stock_app.domain.model.OrganizationField;
 import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
 import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
+import com.birdapp.bp.stock_app.domain.model.organization.Organization;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +30,12 @@ import lombok.Setter;
 @Table(name = "PRODUCT_ITEMS")
 @Getter
 @Setter
-public class ProductItem extends BaseEntity{
+public class ProductItem extends BaseEntity implements OrganizationField {
+
+	/** ORGANIZATION ID. */
+	@ManyToOne
+	@JoinColumn(name = "ORGANIZATION_ID")
+	private Organization organization;
 
 	/** NAME. */
 	@Column(name = "NAME")

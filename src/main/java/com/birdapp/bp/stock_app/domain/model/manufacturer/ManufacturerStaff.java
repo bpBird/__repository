@@ -6,7 +6,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.birdapp.bp.stock_app.domain.model.ContactEntity;
+import com.birdapp.bp.stock_app.domain.model.BaseEntity;
+import com.birdapp.bp.stock_app.domain.model.ContactField;
+import com.birdapp.bp.stock_app.domain.model.NameField;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +23,8 @@ import lombok.Setter;
 @Table(name = "MANUFACTURER_STAFF")
 @Getter
 @Setter
-public class ManufacturerStaff extends ContactEntity {
+public class ManufacturerStaff extends BaseEntity implements NameField,
+															 ContactField {
 
 	/** LASTNAME. */
 	@Column(name = "FIRSTNAME")
@@ -30,6 +33,14 @@ public class ManufacturerStaff extends ContactEntity {
 	/** FIRSTNAME. */
 	@Column(name = "LASTNAME")
 	private String lastname;
+
+	/** PHONE NUMBER. */
+	@Column(name = "PHONE_NUMBER")
+	private String phoneNumber;
+
+	/** EMAIL. */
+	@Column(name = "EMAIL")
+	private String email;
 
 	/** MANUFACTURER ID. */
 	@ManyToOne
