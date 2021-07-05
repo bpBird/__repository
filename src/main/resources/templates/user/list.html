@@ -2,18 +2,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  layout:decorate="layout">
+	  layout:decorator="layout">
 	<head>
 		<meta charset="UTF-8">
 		<title>User list</title>
 	</head>
 	<body>
-		<div class="content">
-			<ul class="userList">
-				<li th:each="user: ${userList}">
-					<a th:text="${user.email}"></a>
-				</li>
-			</ul>
+		<div class="content" layout:fragment="content">
+			<div class="container">
+				<div class="row">
+					<div class="d-flex flex-column col-12 pb-3">
+						<div class="title">User List</div>
+					</div>
+				</div>
+				<div class="row list-box">
+					<div class="d-flex flex-column col-12">
+						<div class="user-list table-responsive col-12">
+							<table class="table align-middle text-nowrap col-12">
+								<thead class="table-header">
+									<tr>
+										<th scope="col" class="col-2 text-end">id</th>
+									  	<th scope="col" class="col-3 text-end">name</th>
+									  	<th scope="col" class="col-3 text-end">email</th>
+										<th scope="col" class="col-2 text-end">role</th>
+									  	<th scope="col" class="col-2"> </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="user : ${userList}" th:object="${user}">
+										<th scope="row" class=" px-2 text-end" th:text="*{id}">001</th>
+										<td class="text-end" th:text="${user.lastname}">sample</td>
+										<td class="text-end" th:text="${user.email}">sample@gmail.com</td>
+										<td class="text-end" th:text="${user.rolename}">ADMIN</td>
+										<td class="px-5 d-flex justify-content-end">
+											<button type="button" class="btn btn-link details-btn rounded-pill ms-3">details</button>
+										</td>
+										<!-- <td class="edit-btn btn center"><a th:href="@{/user/{id}(id=*{id})}">edit</a></td> -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- ./row -->
+				<div class="row">
+					<div class="col-12 mt-3 d-flex justify-content-end px-5">
+						<button class="btn btn-link search-btn rounded-pill ms-3" type="button">search</button>
+						<button class="btn new-btn rounded-pill ms-3" type="submit">new</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

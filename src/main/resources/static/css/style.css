@@ -1,24 +1,29 @@
 @charset "UTF-8";
 
-/* all */
+/* ALL */
 
 html {
-	height: 100vh;
+	height: 100%;
 }
 
 body {
 	background-color: #BEDCEF;
 	font-family: "Helvetica Neue";
 	color: white;
-	width: 100%;
-	height: 100vh;
+	max-width: 1400px;
+	width: 100vw;
+	height: 100%;
 	margin: 0;
 }
 
+.container {
+	height: 100%;
+}
+
 .main-container {
-	width: auto;
-	height: 100vh;
-	padding: 0px;
+	width: 100%;
+	max-width:1800px;
+	height: 100%;
 }
 
 li {
@@ -31,31 +36,90 @@ a {
 }
 
 a:hover {
-	color: #189CC3;
+	color: #4EA0D3;
 }
 
-/* side-bar */
+.icon-item {
+	fill: white;
+}
+
+.icon-item :hover {
+	fill: #4EA0D3;
+}
+
+.table {
+	color: white;
+	border: white;
+}
+
+.table-header {
+	border-bottom-width: 3px;
+}
+
+/* TODO set style for details and edit btn
+white-border and white letter 
+:hover blue-button with white letter*/
+
+/* .btn {
+	width: 100px;
+	border: 2px solid white;
+	color: white;
+}
+
+.btn:hover {
+	border: 2px solid #4EA0D3;
+	background-color: #4EA0D3;
+	color: white;
+} */
+
+button[type="button"] {
+	color: white;
+}
+
+button[type="button"]:hover {
+	color: #4EA0D3;
+}
+
+button[type="submit"] {
+	width: 100px;
+	border: 2px solid white;
+	color: white;
+}
+
+button[type="submit"]:hover {
+	border: 2px solid #4EA0D3;
+	background-color: #4EA0D3;
+	color: white;
+}
+
+/* SIDE-BAR */
 
 .side-bar {
+	height: 100vh;
 	border-right: 3px solid white;
 }
 
-.logo {
-	height: 105px;
-	font-size: 50px;
+.side-bar .row {
 	padding: 15px;
 }
 
+.logo {
+	height: 100px;
+	font-size: 60px;
+	font-weight: 700;
+	/* padding: 15px; */
+}
+
 .menu-list {
-	padding: 15px;
+	/* padding: 15px; */
 	margin: auto;
 	color: white;
 }
 
 .menu-item {
 	margin-bottom: 15px;
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 25px;
+	font-weight: 500;
 	text-align: center;
 	padding-bottom: 5px;
 }
@@ -68,24 +132,55 @@ a:hover {
 	height: 20px;
 	width: 20px;
 	float: right;
-	margin-right: 30px;
 }
 
-.settings-icon {
-	fill: white;
-}
-
-.setting-item :hover {
-	fill: #189CC3;
-}
-
-/* top-bar */
+/* TOP-BAR */
 
 .top-bar {
-	height: 75px;
+	height: 80px;
+	margin-top: 15px;
+	padding: 15px;
 }
 
-/* login-form */
+.clock {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.search-box {
+	background-color: white;
+	height:40px;
+}
+
+.search-text {
+	outline: none;
+}
+
+.search-icon {
+	height: 24px;
+	width: 24px;
+	fill: #bedcef;
+}
+
+/* content */
+
+.content {
+	padding: 15px;
+}
+
+.title {
+	text-align: right;
+	font-size: 40px;
+	font-weight: 700;
+	margin: 0px 30px 0px 30px;
+	color:white;
+}
+
+.list-box {
+	height: 52vh;
+}
+
+/* LOGIN-FORM */
 
 .contact-form div {
     margin:auto;
@@ -93,7 +188,7 @@ a:hover {
 }
 
 .contact-form button {
-    background-color: #189CC3;
+    background-color: #4EA0D3;
     border: none;
     border-radius: 10px;
     width:100px;
@@ -103,7 +198,7 @@ a:hover {
     border-radius: 30px;
 }
 
-/* thanks view */
+/* THANKS-VIEW */
 
 .thanks-view .row {
     height:100%;
@@ -116,7 +211,7 @@ a:hover {
     font-size:30px;
 }
 
-/* footer */
+/* FOOTER */
 
 footer {
     width:100%;
