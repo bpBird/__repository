@@ -1,54 +1,26 @@
 package com.birdapp.bp.stock_app.domain.service.user;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.user.User;
-import com.birdapp.bp.stock_app.domain.repository.user.UserRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.app.form.user.UserPostForm;
+import com.birdapp.bp.stock_app.app.form.user.UserSearchForm;
+import com.birdapp.bp.stock_app.domain.model.dto.user.UserDetailDto;
+import com.birdapp.bp.stock_app.domain.model.dto.user.UserListDto;
 
 /**
- * USER SERVICE IMPLEMENTATION.
+ * USER SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class UserService implements IUserService {
+public interface UserService {
 
-	@Autowired
-	UserRepository userRepository;
+	UserListDto getUserListDto(final Long organizationId);
 
-	@Override
-	public List<User> getUserList() {
-		return userRepository.findAll();
-	}
+	UserListDto getUserListDtoInSearch(final Long organizationId, final UserSearchForm userSearchForm);
 
-	@Override
-	public User getUser() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	UserDetailDto getUserDetailDto(final Long userId);
 
-	@Override
-	public User saveUser() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	UserDetailDto saveUser(final UserPostForm userPostForm);
 
-	@Override
-	public User updateUser() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	Boolean deleteUser(final Long userId);
 
-	@Override
-	public Boolean deleteUser() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
 }

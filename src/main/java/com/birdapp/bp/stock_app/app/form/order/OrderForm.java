@@ -6,7 +6,8 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.stock_app.app.form.BaseForm;
-import com.birdapp.bp.stock_app.domain.model.order.OrderStatus;
+import com.birdapp.bp.stock_app.app.form.OrganizationForm;
+import com.birdapp.bp.stock_app.domain.constant.status.order.OrderStatus;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,7 +22,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class OrderForm extends BaseForm {
+public class OrderForm extends BaseForm implements OrganizationForm {
+
+	/** ORGANIZATION ID. */
+	@NotNull
+	private Long organizationId;
 
 	/** CUSTOMER ID. */
 	@NotNull

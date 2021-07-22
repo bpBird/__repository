@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>login | stock_app</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen, projection"></link>
+    <script src="/static/js/script.js" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 align-self-center">
+                <div class="logo">
+                    <div id="logo" class="logo align-bottom text-center">__stock</div>
+                </div>
+                <!-- ./logo -->
+                <div class="register-form">
+                    <form th:action="@{/sign_up}" th:object="${registerForm}" th:method="post">
+                        <table>
+                            <tr>
+                                <label>organization name</label>
+                                <input type="text" th:field="*{organizationName}" required>
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>email</label>
+                                <input type="text" th:field="*{email}" required>
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>user name</label>
+                                <input type="text" th:field="*{username}" required>
+                                <!-- error message -->
+                            </tr>
+                            <!-- TODO customize password field (fill out twice)-->
+                            <tr>
+                                <label>password</label>
+                                <input type="text" th:field="*{password}" required>
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>first name</label>
+                                <input type="text" th:field="*{firstname}">
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>last name</label>
+                                <input type="text" th:field="*{lastname}">
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>phone number</label>
+                                <input type="text" th:field="*{phoneNumber}">
+                                <!-- error message -->
+                            </tr>
+                            <tr>
+                                <label>locale</label>
+                                <select th:field="*{locale}" required>
+                                    <option th:value="EN" th:text="English"></option>
+                                    <option th:value="JA" th:text="Japanese"></option>
+                                    <option th:value="IT" th:text="Italian"></option>
+                                <!-- error message -->
+                                </select>
+                            </tr>
+                        </table>
+                        <input type="hidden" th:value="1" th:field="*{activateStatus}"/>
+                        <input type="hidden" th:value="0" th:field="*{isAccountNonLocked}"/>
+                        <input type="hidden" th:value="ADMIN" th:field="*{authority}"/>
+                        <div class="btn_area_center"><input type="submit" value="register" class="btn"></div>
+                    </form>
+                </div>
+                <!-- ./login-form -->
+            </div>
+            <!-- ./col-3 -->
+        </div>
+        <!-- ./row -->
+        <div id="footer" class="col-12 fixed-bottom" layout:insert="footer::footer"></div>
+    </div>
+</body>
+</html>

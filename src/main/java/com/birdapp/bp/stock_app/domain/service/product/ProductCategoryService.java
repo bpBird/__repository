@@ -2,50 +2,53 @@ package com.birdapp.bp.stock_app.domain.service.product;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.product.ProductCategory;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.product.ProductCategoryEntity;
 
 /**
- * PRODUCT CATEGORY SERVICE IMPLEMENTATION.
+ * PRODUCT CATEGORY SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class ProductCategoryService implements IProductCategoryService {
+public interface ProductCategoryService {
 
-	@Override
-	public List<ProductCategory> getProductCategoryList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE PRODUCT CATEGORY LIST.
+	 *
+	 * @return {@code ArrayList} productCategoryList
+	 *
+	 */
+	List<ProductCategoryEntity> getProductCategoryList();
 
-	@Override
-	public ProductCategory getProductCategory() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} productCategory
+	 *
+	 */
+	ProductCategoryEntity getProductCategory();
 
-	@Override
-	public ProductCategory saveProductCategory() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * SAVES AND RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} savedProductCategory
+	 *
+	 */
+	ProductCategoryEntity saveProductCategory();
 
-	@Override
-	public ProductCategory updateProductCategory() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * UPDATES AND RETURNS THE PRODUCT CATEGORY.
+	 *
+	 * @return {@code ProductCategory} updatedProductCategory
+	 *
+	 */
+	ProductCategoryEntity updateProductCategory();
 
-	@Override
-	public Boolean deleteProductCategory() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
-
+	/**
+	 * DELETES AND RETURNS IF THE PRODUCT CATEGORY IS DELETED.
+	 *
+	 * @return {@code true} if ProductCategory is deleted
+	 *
+	 */
+	Boolean deleteProductCategory();
 }

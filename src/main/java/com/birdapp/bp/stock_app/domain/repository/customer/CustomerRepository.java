@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.repository.customer;
 
-import com.birdapp.bp.stock_app.domain.model.customer.Customer;
+import com.birdapp.bp.stock_app.domain.entity.customer.CustomerEntity;
 import com.birdapp.bp.stock_app.domain.specification.customer.CustomerSpecification;
 
 import org.springframework.data.domain.Page;
@@ -17,5 +17,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface CustomerRepository
-		extends JpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
+		extends JpaRepository<CustomerEntity, Long>, JpaSpecificationExecutor<CustomerEntity> {
 }

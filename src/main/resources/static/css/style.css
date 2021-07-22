@@ -56,22 +56,6 @@ a:hover {
 	border-bottom-width: 3px;
 }
 
-/* TODO set style for details and edit btn
-white-border and white letter 
-:hover blue-button with white letter*/
-
-/* .btn {
-	width: 100px;
-	border: 2px solid white;
-	color: white;
-}
-
-.btn:hover {
-	border: 2px solid #4EA0D3;
-	background-color: #4EA0D3;
-	color: white;
-} */
-
 button[type="button"] {
 	color: white;
 }
@@ -107,11 +91,9 @@ button[type="submit"]:hover {
 	height: 100px;
 	font-size: 60px;
 	font-weight: 700;
-	/* padding: 15px; */
 }
 
 .menu-list {
-	/* padding: 15px; */
 	margin: auto;
 	color: white;
 }

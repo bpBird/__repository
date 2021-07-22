@@ -2,50 +2,53 @@ package com.birdapp.bp.stock_app.domain.service.product;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.product.ProductItemEntity;
 
 /**
- * PRODUCT ITEM SERVICE IMPLEMENTATION.
+ * PRODUCT ITEM SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class ProductItemService implements IProductItemService {
+public interface ProductItemService {
 
-	@Override
-	public List<ProductItem> getProductItemList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE PRODUCT ITEM LIST.
+	 *
+	 * @return {@code ArrayList} productItemList
+	 *
+	 */
+	List<ProductItemEntity> getProductItemList();
 
-	@Override
-	public ProductItem getProductItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE PRODUCT ITEM.
+	 *
+	 * @return {@code ProductItem} productItem
+	 *
+	 */
+	ProductItemEntity getProductItem();
 
-	@Override
-	public boolean saveProductItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * SAVES AND RETURNS THE PRODUCT ITEM.
+	 *
+	 * @return {@code ProductItem} savedProductItem
+	 *
+	 */
+	boolean saveProductItem();
 
-	@Override
-	public boolean updateProductItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * UPDATES AND RETURNS THE PRODUCT ITEM.
+	 *
+	 * @return {@code ProductItem} updatedProductItem
+	 *
+	 */
+	boolean updateProductItem();
 
-	@Override
-	public boolean deleteProductItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
-
+	/**
+	 * DELETES AND RETURNS IF THE PRODUCT ITEM IS DELETED.
+	 *
+	 * @return {@code true} if ProductItem is deleted
+	 *
+	 */
+	boolean deleteProductItem();
 }

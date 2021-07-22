@@ -1,7 +1,6 @@
 package com.birdapp.bp.stock_app.domain.specification;
 
-import com.birdapp.bp.stock_app.domain.model.AddressEntity;
-import com.birdapp.bp.stock_app.domain.model.AddressField;
+import com.birdapp.bp.stock_app.domain.entity.AddressField;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.thymeleaf.util.StringUtils;

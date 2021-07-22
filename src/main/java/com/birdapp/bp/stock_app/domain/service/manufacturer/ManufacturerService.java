@@ -2,50 +2,54 @@ package com.birdapp.bp.stock_app.domain.service.manufacturer;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerEntity;
 
 /**
- * MANUFACTURER SERVICE IMPLEMENTATION.
+ * MANUFACTURER SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class ManufacturerService implements IManufacturerService {
+public interface ManufacturerService {
 
-	@Override
-	public List<Manufacturer> getManufacturerList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE MANUFACTURER LIST.
+	 *
+	 * @return {@code ArrayList} manufacturerList
+	 *
+	 */
+	List<ManufacturerEntity> getManufacturerList();
 
-	@Override
-	public Manufacturer getManufacturer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
+	ManufacturerEntity getManufacturer();
 
-	@Override
-	public Manufacturer saveManufacturer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * SAVES AND RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
+	ManufacturerEntity saveManufacturer();
 
-	@Override
-	public Manufacturer updateManufacturer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * UPDATES AND RETURNS THE MANUFACTURER.
+	 *
+	 * @return {@code Manufacturer} manufacturer
+	 *
+	 */
+	ManufacturerEntity updateManufacturer();
 
-	@Override
-	public Boolean deleteManufacturer() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * DELETES AND RETURNS IF THE MANUFACTURER IS DELETED.
+	 *
+	 * @return {@code true} if manufacturer is deleted
+	 *
+	 */
+	Boolean deleteManufacturer();
 
 }

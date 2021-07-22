@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>login | stock_app</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen, projection"></link>
+    <script src="/static/js/script.js" th:src="@{/js/main.js}"></script>
 </head>
 <body>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-3 align-self-center">
+                <div class="logo">
+                    <div id="logo" class="logo align-bottom text-center">__stock</div>
+                </div>
+                <!-- ./logo -->
+                <div class="invalid-message">
+                    <div th:if="${param.error}">
+                        Invalid username and password.
+                    </div>
+                    <div th:if="${param.logout}">
+                        You have been logged out.
+                    </div>
+                </div>
+                <!-- ./invalid-message -->
+                <div class="login-form">
+                    <form th:action="@{/sign_in}" method="POST">
+                        <div class="username">
+                            <label>username</label>
+                            <input type="text" name="email"/>
+                        </div>
+                        <div class="password">
+                            <label>password</label>
+                            <input type="password" name="password"/> 
+                        </div>
+                        <div class="login-button">
+                            <input class="btn" type="submit" value="login">
+                        </div>
+                    </form>
+                </div>
+                <!-- ./login-form -->
+            </div>
+            <!-- ./col-3 -->
+        </div>
+        <!-- ./row -->
+        <div id="footer" class="col-12 fixed-bottom" layout:insert="footer::footer"></div>
+    </div>
 </body>
 </html>

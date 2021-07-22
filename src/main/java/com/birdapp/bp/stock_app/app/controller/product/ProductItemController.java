@@ -3,8 +3,8 @@ package com.birdapp.bp.stock_app.app.controller.product;
 import java.util.List;
 
 import com.birdapp.bp.stock_app.app.form.product.ProductItemForm;
-import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
-import com.birdapp.bp.stock_app.domain.service.product.IProductItemService;
+import com.birdapp.bp.stock_app.domain.entity.product.ProductItemEntity;
+import com.birdapp.bp.stock_app.domain.service.product.ProductItemService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ProductItemController<F extends ProductItemForm> {
 
 	@Autowired
-	IProductItemService iProductItemService;
+	ProductItemService iProductItemService;
 
 	@GetMapping("/product/list")
 	public String getProductItemList(Model model) {
 		//TODO get the searching requirements and return list view (no-param means all)
-		List<ProductItem> productItemList = iProductItemService.getProductItemList();
+		List<ProductItemEntity> productItemList = iProductItemService.getProductItemList();
 		model.addAttribute(productItemList);
 		return "product/item/list";
 	}

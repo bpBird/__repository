@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.repository.order;
 
-import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
+import com.birdapp.bp.stock_app.domain.entity.order.OrderItemEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -14,5 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface OrderItemRepository
-		extends JpaRepository<OrderItem, Long>, JpaSpecificationExecutor<OrderItem> {
+		extends JpaRepository<OrderItemEntity, Long>, JpaSpecificationExecutor<OrderItemEntity> {
 }

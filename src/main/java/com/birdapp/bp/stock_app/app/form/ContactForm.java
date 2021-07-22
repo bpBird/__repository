@@ -1,32 +1,36 @@
 package com.birdapp.bp.stock_app.app.form;
 
-import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import com.birdapp.bp.stock_app.domain.validation.Email;
-
-import lombok.Getter;
-import lombok.Setter;
-
 /**
- * CONTACT FORM (abstract form).
+ * CONTACT FORM INTERFACE.
  *
  * @author bp
  *
  */
-@MappedSuperclass
-@Getter
-@Setter
-public abstract class ContactForm extends BaseForm{
+public interface ContactForm {
 
-	/** PHONE NUMBER. */
-	@NotNull
-	@Size(min = 10, max = 15)
-	protected String phoneNumber;
+	/**
+	 * PHONE NUMBER.
+	 *  
+	 * <pre>
+	 * should be
+	 * 	{@code @Size(min = 10, max = 15)}
+	 * </pre>
+	 * 
+	 * @return phoneNumber
+	 */
+	public String getPhoneNumber();
 
-	/** EMAIL. */
-	@NotNull
-	@Email
-	protected String email;
+	/**
+	 * EMAIL.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * 	{@code @Email}
+	 * </pre>
+	 * 
+	 * @return email
+	 */
+	public String getEmail();
+
 }

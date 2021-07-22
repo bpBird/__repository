@@ -1,6 +1,8 @@
 package com.birdapp.bp.stock_app.domain.repository.user;
 
-import com.birdapp.bp.stock_app.domain.model.user.User;
+import java.util.List;
+
+import com.birdapp.bp.stock_app.domain.entity.user.UserEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -14,5 +16,16 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository
-		extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+		extends JpaRepository<UserEntity, Long>, JpaSpecificationExecutor<UserEntity> {
+
+	/**
+	 * find {@link UserEntity} by organization id.
+	 */
+	public List<UserEntity> findByOrganizationId(Long organizationId);
+	
+	/**
+	 * find {@link UserEntity} by username.
+	 */
+	public UserEntity findByUsername(String username);
+
 }

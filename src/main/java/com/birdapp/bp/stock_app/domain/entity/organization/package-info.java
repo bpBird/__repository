@@ -1,0 +1,1 @@
+package com.birdapp.bp.stock_app.domain.entity.organization;

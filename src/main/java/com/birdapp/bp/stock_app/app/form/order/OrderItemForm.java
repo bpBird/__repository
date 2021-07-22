@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import javax.validation.constraints.NotNull;
 
 import com.birdapp.bp.stock_app.app.form.BaseForm;
+import com.birdapp.bp.stock_app.app.form.OrganizationForm;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,11 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class OrderItemForm extends BaseForm {
+public class OrderItemForm extends BaseForm implements OrganizationForm {
+
+	/** ORGANIZATION ID. */
+	@NotNull
+	private Long organizationId;
 
 	/** ORDER ID. */
 	@NotNull

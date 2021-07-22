@@ -3,8 +3,8 @@ package com.birdapp.bp.stock_app.app.controller.manufacturer;
 import java.util.List;
 
 import com.birdapp.bp.stock_app.app.form.manufacturer.ManufacturerForm;
-import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
-import com.birdapp.bp.stock_app.domain.service.manufacturer.IManufacturerService;
+import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerEntity;
+import com.birdapp.bp.stock_app.domain.service.manufacturer.ManufacturerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ManufacturerController<F extends ManufacturerForm> {
 
 	@Autowired
-	IManufacturerService iManufacturerService;
+	ManufacturerService iManufacturerService;
 
 	@GetMapping("/manufacturer/list")
 	public String getManufacturerList(Model model) {
 		//TODO get the searching requirements and return list view (no-param means all)
-		List<Manufacturer> manufacturerList = iManufacturerService.getManufacturerList();
+		List<ManufacturerEntity> manufacturerList = iManufacturerService.getManufacturerList();
 		model.addAttribute(manufacturerList);
 		return "manufacturer/list";
 	}

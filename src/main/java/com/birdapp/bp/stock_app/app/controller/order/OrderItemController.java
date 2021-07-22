@@ -3,8 +3,8 @@ package com.birdapp.bp.stock_app.app.controller.order;
 import java.util.List;
 
 import com.birdapp.bp.stock_app.app.form.order.OrderItemForm;
-import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
-import com.birdapp.bp.stock_app.domain.service.order.IOrderItemService;
+import com.birdapp.bp.stock_app.domain.entity.order.OrderItemEntity;
+import com.birdapp.bp.stock_app.domain.service.order.OrderItemService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OrderItemController <F extends OrderItemForm> {
 
 	@Autowired
-	IOrderItemService iOrderItemService;
+	OrderItemService iOrderItemService;
 
 	@GetMapping("/order/item/list")
 	public String getOrderItemList(Model model) {
 		//TODO get the searching requirements and return list view (no-param means all)
-		List<OrderItem> orderItemList = iOrderItemService.getOrderItemList();
+		List<OrderItemEntity> orderItemList = iOrderItemService.getOrderItemList();
 		model.addAttribute(orderItemList);
 		return "/order/item/list";
 	}

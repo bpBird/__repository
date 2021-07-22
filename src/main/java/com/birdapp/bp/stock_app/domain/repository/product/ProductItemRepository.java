@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.repository.product;
 
-import com.birdapp.bp.stock_app.domain.model.product.ProductItem;
+import com.birdapp.bp.stock_app.domain.entity.product.ProductItemEntity;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProductItemRepository
-		extends JpaRepository<ProductItem, Long>, JpaSpecificationExecutor<ProductItem> {
+		extends JpaRepository<ProductItemEntity, Long>, JpaSpecificationExecutor<ProductItemEntity> {
 
-	public Page<ProductItem> findAll(Specification<ProductItem> specification, Pageable pageable);
+	public Page<ProductItemEntity> findAll(Specification<ProductItemEntity> specification, Pageable pageable);
 }

@@ -21,7 +21,7 @@
 							<table class="table align-middle text-nowrap col-12">
 								<thead class="table-header">
 									<tr>
-										<th scope="col" class="col-2 text-end">id</th>
+										<th scope="col" class="col-2 text-end">No</th>
 									  	<th scope="col" class="col-3 text-end">name</th>
 									  	<th scope="col" class="col-3 text-end">email</th>
 										<th scope="col" class="col-2 text-end">role</th>
@@ -29,8 +29,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="user : ${userList}" th:object="${user}">
-										<th scope="row" class=" px-2 text-end" th:text="*{id}">001</th>
+									<tr th:each="user, stat : ${userList}" th:object="${user}">
+										<th scope="row" class=" px-2 text-end" th:text="*{stat.count}">001</th>
 										<td class="text-end" th:text="${user.lastname}">sample</td>
 										<td class="text-end" th:text="${user.email}">sample@gmail.com</td>
 										<td class="text-end" th:text="${user.rolename}">ADMIN</td>

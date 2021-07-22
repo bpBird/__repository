@@ -1,23 +1,25 @@
 package com.birdapp.bp.stock_app.app.form;
 
-import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotNull;
-
-import lombok.Getter;
-import lombok.Setter;
+import java.io.Serializable;
 
 /**
- * BASE FORM (abstract form).
+ * ABSTRACT FORM (abstract form).
  *
  * @author bp
  *
  */
-@MappedSuperclass
-@Getter
-@Setter
-public abstract class BaseForm extends CoreForm {
+public interface BaseForm extends Serializable {
 
-	/** ORGANIZATION ID. */
-	@NotNull
-	private Long organizationId;
+	/**
+	 * ID.
+	 *  
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return id
+	 */
+	public Long getId();
+
 }

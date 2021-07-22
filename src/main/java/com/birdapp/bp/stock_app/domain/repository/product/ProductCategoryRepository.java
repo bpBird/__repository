@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.repository.product;
 
-import com.birdapp.bp.stock_app.domain.model.product.ProductCategory;
+import com.birdapp.bp.stock_app.domain.entity.product.ProductCategoryEntity;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProductCategoryRepository
-		extends JpaRepository<ProductCategory, Long>, JpaSpecificationExecutor<ProductCategory> {
+		extends JpaRepository<ProductCategoryEntity, Long>, JpaSpecificationExecutor<ProductCategoryEntity> {
 
-	public Page<ProductCategory> findAll(Specification<ProductCategory> specification, Pageable pageable);
+	public Page<ProductCategoryEntity> findAll(Specification<ProductCategoryEntity> specification, Pageable pageable);
 }

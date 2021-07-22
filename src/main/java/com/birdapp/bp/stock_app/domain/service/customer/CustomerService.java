@@ -2,52 +2,32 @@ package com.birdapp.bp.stock_app.domain.service.customer;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.customer.Customer;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.customer.CustomerEntity;
 
 /**
- * CUSTOMER SERVICE IMPLEMENTATION.
+ * CUSTOMER SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class CustomerService implements ICustomerService {
+public interface CustomerService {
 
-	@Override
-	public List<Customer> getCustomerList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	List<CustomerEntity> getCustomerList(
+//			Long id,
+//			String name,
+//			Optional<String> phoneNumber,
+//			Optional<String> email,
+//			Optional<String> country,
+//			Optional<String> state,
+//			Optional<String> prefecture
+			);
 
-	@Override
-	public Customer getCustomer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	CustomerEntity getCustomer();
 
-	@Override
-	public Customer saveCustomer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	CustomerEntity saveCustomer();
 
-	@Override
-	public Customer updateCustomer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	CustomerEntity updateCustomer();
 
-	@Override
-	public Customer deleteCustomer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	CustomerEntity deleteCustomer();
 
 }

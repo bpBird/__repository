@@ -1,83 +1,81 @@
 package com.birdapp.bp.stock_app.app.controller.user;
 
-import java.util.List;
+import com.birdapp.bp.stock_app.app.form.user.UserPostForm;
+import com.birdapp.bp.stock_app.app.form.user.UserSearchForm;
+import com.birdapp.bp.stock_app.domain.constant.path.user.UserUrl;
+import com.birdapp.bp.stock_app.domain.model.dto.user.UserDetailDto;
+import com.birdapp.bp.stock_app.domain.model.dto.user.UserListDto;
+import com.birdapp.bp.stock_app.domain.service.user.UserService;
 
-import com.birdapp.bp.stock_app.app.form.user.UserForm;
-import com.birdapp.bp.stock_app.domain.model.user.User;
-import com.birdapp.bp.stock_app.domain.service.user.IUserService;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import lombok.RequiredArgsConstructor;
 
 /**
- * CONTROLLER FOR USERS.
+ * CONTROLLER FOR USER PAGE.
  *
  * @author bp
  *
  */
+@RequiredArgsConstructor
 @Controller
-public class UserController<F extends UserForm> {
+public class UserController<UPF, USF extends UserForm> implements UserUrl {
 
-	@Autowired
-	IUserService iUserService;
+	private final UserService userService;
 
-	/**
-	 * RETURN THE USER LIST VIEW.
-	 *
-	 * @param model
-	 * @return userList view
-	 */
-	@GetMapping("/user/list")
-	String getUserList (Model model) {
-		// TODO get the searching requirements and return list view (method w/ no-param gets all)
-		List<User> userList = iUserService.getUserList();
+	private final MessageSource messageSource;
+
+	@GetMapping(USER_LIST)
+	String getUserListView (@AuthenticationPrincipal UserDetailDto userDetailDto,
+							Model model) {
+		UserListDto userList = userService.getUserListDto(userDetailDto.getOrganizationId());
 		model.addAttribute(userList);
 		return "user/list";
 	}
 
-	/**
-	 * RETURN THE REGISTER VIEW OR EDIT VIEW.
-	 *
-	 * @param userId
-	 * @param organizationId
-	 * @param model
-	 * @return user
-	 */
-	@GetMapping("/user/modal/{userId}")
-	String getUser(@PathVariable("userId") Long userId, Long organizationId ,Model model) {
-		// TODO get the target object id and return info view (modal window)
-		// use stream mapping and Optional object
-		return "user/list";
+	@ResponseBody
+	@GetMapping(USER_MODAL_SEARCH)
+	UserListDto getUserListInSearch (@Validated UserSearchForm userSearchForm,
+							   		 @AuthenticationPrincipal UserDetailDto userDetailDto,
+							   		 Model model) {
+		return userService.getUserListDtoInSearch(userDetailDto.getOrganizationId(), userSearchForm);
 	}
 
-	/**
-	 * RETURN USER LIST VIEW W/ SAVED MESSAGE.
-	 *
-	 * @param userId
-	 * @param model
-	 * @return userList view
-	 */
-	@GetMapping("/user/modal/save/{userId}")
-	String saveUser(@PathVariable("userId") Long userId, Model model) {
-		// TODO get the target object id and return edit view (modal window w/ form)
-		// use stream mapping and Optional object
-		return "user/list"; // redirect to top with success message (list view)
+	@ResponseBody
+	@RequestMapping(USER_MODAL_DETAIL)
+	UserDetailDto getUserDetail (@PathVariable("userId") Long userId) {
+		return userService.getUserDetailDto(userId);
 	}
 
-	/**
-	 * RETURN USER LIST VIEW W/ DELETED MESSAGE.
-	 *
-	 * @param userId
-	 * @param model
-	 * @return userList view
-	 */
-	@GetMapping("/user/modal/delete/{userId}")
-	String deleteUser(@PathVariable("userId") Long userId, Model model) {
-		// TODO get the target object id and return info view (modal window)
-		return "user/list"; // redirect to top with success message(list view)
+	@PostMapping(USER_MODAL_SAVE)
+	String postUserSave(@Validated UserPostForm userPostForm,
+						@AuthenticationPrincipal UserDetailDto userDetailDto,
+						RedirectAttributes redirectAttributes,
+						Model model) {
+		userService.saveUser(userPostForm);
+		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("user.save.success", new String[]{}, userDetailDto.getLocale()));
+        return REDIRECT_TO + USER_LIST;
+	}
+
+	@DeleteMapping(USER_MODAL_DELETE)
+	String postUserDelete(@PathVariable("userId") Long userId,
+						   @AuthenticationPrincipal UserDetailDto userDetailDto,
+						   RedirectAttributes redirectAttributes,
+						   Model model) {
+		userService.deleteUser(userId);
+		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("user.save.success", new String[]{}, userDetailDto.getLocale()));
+		return REDIRECT_TO + USER_LIST;
 	}
 	
 }

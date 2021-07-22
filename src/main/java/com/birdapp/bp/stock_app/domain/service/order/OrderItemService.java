@@ -2,50 +2,54 @@ package com.birdapp.bp.stock_app.domain.service.order;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.order.OrderItem;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.order.OrderItemEntity;
 
 /**
- * ORDER ITEM SERVICE IMPLEMENTATION.
+ * ORDER ITEM SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class OrderItemService implements IOrderItemService {
+public interface OrderItemService {
 
-	@Override
-	public List<OrderItem> getOrderItemList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE ORDER ITEM LIST.
+	 *
+	 * @return {@code ArrayList} oederItemList
+	 *
+	 */
+	List<OrderItemEntity> getOrderItemList();
 
-	@Override
-	public OrderItem getOrderItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} orderItem
+	 *
+	 */
+	OrderItemEntity getOrderItem();
 
-	@Override
-	public OrderItem saveOrderItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * SAVES AND RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} savedOrderItem
+	 *
+	 */
+	OrderItemEntity saveOrderItem();
 
-	@Override
-	public OrderItem updateOrderItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * UPDATES AND RETURNS THE ORDER ITEM.
+	 *
+	 * @return {@code OrderItem} updatedOrder
+	 *
+	 */
+	OrderItemEntity updateOrderItem();
 
-	@Override
-	public Boolean deleteOrderItem() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * DELETES AND RETURNS IF THE ORDER ITEM IS DELETED.
+	 *
+	 * @return {@code true} if OrderItem is deleted
+	 *
+	 */
+	Boolean deleteOrderItem();
 
 }

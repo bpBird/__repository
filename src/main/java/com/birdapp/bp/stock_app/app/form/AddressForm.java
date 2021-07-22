@@ -2,47 +2,91 @@ package com.birdapp.bp.stock_app.app.form;
 
 import java.util.Locale.IsoCountryCode;
 
-import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotNull;
-
-import lombok.Getter;
-import lombok.Setter;
-
 /**
- * ADDRESS FORM (abstract form).
+ * ADDRESS FORM INTERFACE.
  *
  * @author bp
  *
  */
-@MappedSuperclass
-@Getter
-@Setter
-public abstract class AddressForm extends ContactForm {
+public interface AddressForm {
 
-	/** COUNTRY. */
-	@NotNull
-	protected IsoCountryCode country;
+	/**
+	 * COUNTRY.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return country
+	 */
+	public IsoCountryCode getCountry();
 
-	/** STATE. */
-	@NotNull
-	protected String state;
+	/**
+	 * STATE.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return state
+	 */
+	public String getState();
 
-	/** PREFECTURE. */
-	@NotNull
-	protected String prefecture;
+	/**
+	 * PREFECTURE.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return prefecture
+	 */	
+	public String getPrefecture();
 
-	/** CITY. */
-	@NotNull
-	protected String city;
+	/**
+	 * CITY.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return city
+	 */
+	public String getCity();
 
-	/** STREET ADDRESS. */
-	@NotNull
-	protected String streetAddress;
+	/**
+	 * STREET ADDRESS.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return streetAddress
+	 */
+	public String getStreetAddress();
 
-	/** APARTMENT ADDRESS. */
-	protected String apartmentAddress;
+	/**
+	 * APARTMENT ADDRESS.
+	 * 
+	 * @return apartmentAddress
+	 */
+	public String getApartmentAddress();
 
-	/** POSTAL CODE. */
-	@NotNull
-	protected String postalCode;
+	/**
+	 * POSTAL CODE.
+	 * 
+	 * <pre>
+	 * should be
+	 * 	{@code @NotNull}
+	 * </pre>
+	 * 
+	 * @return postalCode
+	 */
+	public String getPostalCode();
+
 }

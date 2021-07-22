@@ -2,49 +2,54 @@ package com.birdapp.bp.stock_app.domain.service.manufacturer;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.manufacturer.ManufacturerStaff;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerStaffEntity;
 
 /**
- * MANUFACTURER STAFF IMPLEMENTATION.
+ * MANUFACTURER STAFF SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class ManufacturerStaffService implements IManufacturerStaffService {
+public interface ManufacturerStaffService {
 
-	@Override
-	public List<ManufacturerStaff> getManufacturerStaffList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE MANUFACTURER STAFF LIST.
+	 *
+	 * @return {@code ArrayList} manufacturerStaffList
+	 *
+	 */
+	List<ManufacturerStaffEntity> getManufacturerStaffList();
 
-	@Override
-	public ManufacturerStaff getManufacturerStaff() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} manufacturerStaff
+	 *
+	 */
+	ManufacturerStaffEntity getManufacturerStaff();
 
-	@Override
-	public ManufacturerStaff saveManufacturerStaff() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * SAVES AND RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} savedManufacturerStaff
+	 *
+	 */
+	ManufacturerStaffEntity saveManufacturerStaff();
 
-	@Override
-	public ManufacturerStaff updateManufacturerStaff() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * UPDATES AND RETURNS THE MANUFACTURER STAFF.
+	 *
+	 * @return {@code ManufacturerStaff} updatedManufacturerStaff
+	 *
+	 */
+	ManufacturerStaffEntity updateManufacturerStaff();
 
-	@Override
-	public Boolean deleteManufacturerStaff() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * DELETES AND RETURNS IF THE MANUFACTURER STAFF IS DELETED.
+	 *
+	 * @return {@code true} if ManufacturerStaff is deleted
+	 *
+	 */
+	Boolean deleteManufacturerStaff();
+
 }

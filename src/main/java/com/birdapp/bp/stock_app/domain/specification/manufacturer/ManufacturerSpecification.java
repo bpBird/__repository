@@ -1,8 +1,8 @@
 package com.birdapp.bp.stock_app.domain.specification.manufacturer;
 
-import com.birdapp.bp.stock_app.domain.model.AddressField;
-import com.birdapp.bp.stock_app.domain.model.ContactField;
-import com.birdapp.bp.stock_app.domain.model.manufacturer.Manufacturer;
+import com.birdapp.bp.stock_app.domain.entity.AddressField;
+import com.birdapp.bp.stock_app.domain.entity.ContactField;
+import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerEntity;
 import com.birdapp.bp.stock_app.domain.specification.AddressSpecification;
 import com.birdapp.bp.stock_app.domain.specification.ContactSpecification;
 import com.birdapp.bp.stock_app.domain.specification.OrganizationSpecification;
@@ -16,11 +16,11 @@ import org.thymeleaf.util.StringUtils;
  * @author bp
  *
  */
-public class ManufacturerSpecification implements OrganizationSpecification<Manufacturer>,
-												  ContactSpecification<Manufacturer>,
-												  AddressSpecification<Manufacturer> {
+public class ManufacturerSpecification implements OrganizationSpecification<ManufacturerEntity>,
+												  ContactSpecification<ManufacturerEntity>,
+												  AddressSpecification<ManufacturerEntity> {
 
-	public Specification<Manufacturer> containsName(String name) {
+	public Specification<ManufacturerEntity> containsName(String name) {
 		return StringUtils.isEmpty(name) ? null : (root, query, cb) -> {
 			return cb.equal(root.get("lastname"), "%" + name + "%");
 		};

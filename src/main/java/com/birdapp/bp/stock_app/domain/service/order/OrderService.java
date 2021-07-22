@@ -2,50 +2,54 @@ package com.birdapp.bp.stock_app.domain.service.order;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import com.birdapp.bp.stock_app.domain.model.order.Order;
-
-import org.springframework.stereotype.Service;
+import com.birdapp.bp.stock_app.domain.entity.order.OrderEntity;
 
 /**
- * ORDER SERVICE IMPLEMENTATION.
+ * ORDER SERVICE INTERFACE.
  *
  * @author bp
  *
  */
-@Service
-@Transactional
-public class OrderService implements IOrderService{
+public interface OrderService {
 
-	@Override
-	public List<Order> getOrderList() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE ORDER LIST.
+	 *
+	 * @return {@code ArrayList} orderList
+	 *
+	 */
+	List<OrderEntity> getOrderList();
 
-	@Override
-	public Order getOrder() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * RETURNS THE ORDER.
+	 *
+	 * @return {@code Order} order
+	 *
+	 */
+	OrderEntity getOrder();
 
-	@Override
-	public Order saveOrder() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * SAVES AND RETURNS THE ORDER.
+	 *
+	 * @return {@code Order} savedOrder
+	 *
+	 */
+	OrderEntity saveOrder();
 
-	@Override
-	public Order updateOrder() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	/**
+	 * UPDATES AND RETURNS THE ORDER.
+	 *
+	 * @return {@code Order} updatedOrder
+	 *
+	 */
+	OrderEntity updateOrder();
 
-	@Override
-	public Boolean deleteOrder() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
-	}
+	/**
+	 * DELETES AND RETURNS IF THE ORDER IS DELETED.
+	 *
+	 * @return {@code true} if Order is deleted
+	 *
+	 */
+	Boolean deleteOrder();
 
 }

@@ -1,6 +1,6 @@
 package com.birdapp.bp.stock_app.domain.repository.manufacturer;
 
-import com.birdapp.bp.stock_app.domain.model.manufacturer.ManufacturerStaff;
+import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerStaffEntity;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ManufacturerStaffRepository
-		extends JpaRepository<ManufacturerStaff, Long>, JpaSpecificationExecutor<ManufacturerStaff> {
+		extends JpaRepository<ManufacturerStaffEntity, Long>, JpaSpecificationExecutor<ManufacturerStaffEntity> {
 
-	public Page<ManufacturerStaff> findAll(Specification<ManufacturerStaff> specification, Pageable pageable);
+	public Page<ManufacturerStaffEntity> findAll(Specification<ManufacturerStaffEntity> specification, Pageable pageable);
 }
