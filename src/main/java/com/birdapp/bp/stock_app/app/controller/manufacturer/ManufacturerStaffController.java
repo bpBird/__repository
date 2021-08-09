@@ -2,9 +2,9 @@ package com.birdapp.bp.stock_app.app.controller.manufacturer;
 
 import java.util.List;
 
-import com.birdapp.bp.stock_app.app.form.manufacturer.ManufacturerStaffForm;
+import com.birdapp.bp.stock_app.app.form.manufacturer.ManufacturerStaffPostForm;
+import com.birdapp.bp.stock_app.app.helper.manufacturer.ManufacturerStaffHelper;
 import com.birdapp.bp.stock_app.domain.entity.manufacturer.ManufacturerStaffEntity;
-import com.birdapp.bp.stock_app.domain.service.manufacturer.ManufacturerStaffService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 @Controller
-public class ManufacturerStaffController<F extends ManufacturerStaffForm> {
+public class ManufacturerStaffController<F extends ManufacturerStaffPostForm> {
 
 	@Autowired
-	ManufacturerStaffService iManufacturerStaffService;
+	ManufacturerStaffHelper iManufacturerStaffService;
 
 	@GetMapping("/manufacturer/staff/list")
 	public String getManufacturerStaffList(Model model) {

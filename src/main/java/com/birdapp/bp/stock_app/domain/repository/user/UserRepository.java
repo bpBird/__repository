@@ -1,6 +1,7 @@
 package com.birdapp.bp.stock_app.domain.repository.user;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.birdapp.bp.stock_app.domain.entity.user.UserEntity;
 
@@ -18,14 +19,12 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository
 		extends JpaRepository<UserEntity, Long>, JpaSpecificationExecutor<UserEntity> {
 
-	/**
-	 * find {@link UserEntity} by organization id.
-	 */
-	public List<UserEntity> findByOrganizationId(Long organizationId);
+	public List<UserEntity> findAllByOrganizationId(Long organizationId);
 	
-	/**
-	 * find {@link UserEntity} by username.
-	 */
-	public UserEntity findByUsername(String username);
+	public Optional<UserEntity> findByUsername(String username);
+
+	public Boolean existsByUsername(String username);
+
+	public Boolean existsByEmail(String email);
 
 }

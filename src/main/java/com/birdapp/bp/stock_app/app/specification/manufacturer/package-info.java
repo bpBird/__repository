@@ -1,0 +1,1 @@
+package com.birdapp.bp.stock_app.app.specification.manufacturer;

@@ -4,14 +4,20 @@
 
 class Utilities {
 
-    /**
-     * GET THE CURRENT DATETIME.
-     */
+    // TODO implement this method(time display of the header)
     NowDateTime () {
         let now = new Date();
         return document.getElementById("time").innerHTML = now.toLocaleString();
     }
-    // FIXME modify setInterval method
-    // setInterval(NowDateTime, 1000);
 
 }
+
+// class Registration {
+
+//     // TODO implement this method(time display of the header)
+//      () {
+//         let now = new Date();
+//         return document.getElementById("time").innerHTML = now.toLocaleString();
+//     }
+
+// }

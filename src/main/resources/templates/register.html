@@ -4,82 +4,98 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
-    <title>login | stock_app</title>
+    <title>register | stock_app</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen, projection"></link>
     <script src="/static/js/script.js" th:src="@{/js/main.js}"></script>
 </head>
+<!-- TODO centering content w/ Bootstrap5 -->
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-3 align-self-center">
+            <div class="col-3">
                 <div class="logo">
-                    <div id="logo" class="logo align-bottom text-center">__stock</div>
+                    <div class="logo align-bottom text-center">__stock</div>
                 </div>
                 <!-- ./logo -->
                 <div class="register-form">
-                    <form th:action="@{/sign_up}" th:object="${registerForm}" th:method="post">
-                        <table>
-                            <tr>
-                                <label>organization name</label>
-                                <input type="text" th:field="*{organizationName}" required>
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>email</label>
-                                <input type="text" th:field="*{email}" required>
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>user name</label>
-                                <input type="text" th:field="*{username}" required>
-                                <!-- error message -->
-                            </tr>
-                            <!-- TODO customize password field (fill out twice)-->
-                            <tr>
-                                <label>password</label>
-                                <input type="text" th:field="*{password}" required>
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>first name</label>
-                                <input type="text" th:field="*{firstname}">
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>last name</label>
-                                <input type="text" th:field="*{lastname}">
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>phone number</label>
-                                <input type="text" th:field="*{phoneNumber}">
-                                <!-- error message -->
-                            </tr>
-                            <tr>
-                                <label>locale</label>
-                                <select th:field="*{locale}" required>
-                                    <option th:value="EN" th:text="English"></option>
-                                    <option th:value="JA" th:text="Japanese"></option>
-                                    <option th:value="IT" th:text="Italian"></option>
-                                <!-- error message -->
-                                </select>
-                            </tr>
-                        </table>
-                        <input type="hidden" th:value="1" th:field="*{activateStatus}"/>
-                        <input type="hidden" th:value="0" th:field="*{isAccountNonLocked}"/>
-                        <input type="hidden" th:value="ADMIN" th:field="*{authority}"/>
-                        <div class="btn_area_center"><input type="submit" value="register" class="btn"></div>
+                    <form th:action="@{/sign_up}" th:object="${registerForm}" method="POST" enctype="utf8">
+                        <div id="organizationNameForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Organization name</label>
+                            <!-- TODO use <label th:text="#{label.organizationForm.name}">Organization name</label> -->
+                            <input class="d-block mx-auto" th:field="*{organizationPostForm.name}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="emailForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Email</label>
+                            <!-- TODO use <label th:text="#{label.userForm.email}">Email</label> -->
+                            <input class="d-block mx-auto" th:field="*{userPostForm.email}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="usernameForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">User name</label>
+                            <!-- TODO use <label th:text="#{label.userForm.username}">User name</label> -->
+                            <input class="d-block mx-auto" th:field="*{userPostForm.username}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="passwordForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Password</label>
+                            <!-- TODO use <label th:text="#{label.userForm.password}">Password</label> -->
+                            <input class="d-block mx-auto" type="password" th:field="*{userPostForm.password}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="confirmPasswordForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Confirm Password</label>
+                            <!-- TODO use <label th:text="#{label.userForm.confirmPassword}">Confirm Email</label> -->
+                            <input class="d-block mx-auto" type="password" th:field="*{userPostForm.confirmPassword}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="firstnameForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Firstname</label>
+                            <!--TODO use <label th:text="#{label.userForm.firstname}">Firstname</label> -->
+                            <input class="d-block mx-auto" th:field="*{userPostForm.firstname}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="lastnameForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Lastname</label>
+                            <!-- TODO use <label th:text="#{label.userForm.lastname}">Lastname</label> -->
+                            <input class="d-block mx-auto" th:field="*{userPostForm.lastname}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="phoneNumberForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Phone number</label>
+                            <!-- TODO use <label th:text="#{label.userForm.phoneNumber}">Phone number</label> -->
+                            <input class="d-block mx-auto" th:field="*{userPostForm.phoneNumber}"/>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <div id="localeForm" class="mb-4">
+                            <label class="d-block mx-auto py-1 px-2">Language</label>
+                            <!-- TODO use <label th:text="#{label.userForm.locale}">Language</label> -->
+                            <select  class="d-block mx-auto" th:field="*{userPostForm.locale}" required>
+                                <option th:value="EN" th:text="English"></option>
+                                <option th:value="JA" th:text="Japanese"></option>
+                                <option th:value="IT" th:text="Italian"></option>
+                            </select>
+                            <!-- TODO control with js <p class="error-message small">Validation error</p> -->
+                        </div>
+                        <input type="hidden" th:value="1" th:field="*{organizationPostForm.activateStatus}"/>
+                        <input type="hidden" th:value="0" th:field="*{userPostForm.isAccountNonLocked}"/>
+                        <input type="hidden" th:value="ADMIN" th:field="*{userPostForm.authority}"/>
+                        <div class="register-button text-center">
+                            <!-- TODO change css to blue button -->
+                            <button class="btn btn-medium align-self-center my-3" type="submit">register</button>
+                        </div>
                     </form>
                 </div>
-                <!-- ./login-form -->
+                <!-- ./register-form -->
             </div>
             <!-- ./col-3 -->
         </div>
         <!-- ./row -->
         <div id="footer" class="col-12 fixed-bottom" layout:insert="footer::footer"></div>
     </div>
+    <!-- ./container -->
 </body>
 </html>

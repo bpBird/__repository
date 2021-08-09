@@ -36,9 +36,8 @@ import lombok.Setter;
 public class OrderEntity extends BaseEntity implements OrganizationField {
 
 	/** ORGANIZATION ID. */
-	@ManyToOne
 	@JoinColumn(name = "ORGANIZATION_ID")
-	private OrganizationEntity organizationId;
+	private Long organizationId;
 
 	/** CUSTOMER ID. */
 	@ManyToOne

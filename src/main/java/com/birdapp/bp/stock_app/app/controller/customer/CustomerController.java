@@ -2,9 +2,9 @@ package com.birdapp.bp.stock_app.app.controller.customer;
 
 import java.util.List;
 
-import com.birdapp.bp.stock_app.app.form.customer.CustomerForm;
+import com.birdapp.bp.stock_app.app.form.customer.CustomerPostForm;
+import com.birdapp.bp.stock_app.app.helper.customer.CustomerHelper;
 import com.birdapp.bp.stock_app.domain.entity.customer.CustomerEntity;
-import com.birdapp.bp.stock_app.domain.service.customer.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 @Controller
-public class CustomerController<F extends CustomerForm> {
+public class CustomerController<F extends CustomerPostForm> {
 
 	@Autowired
-	CustomerService iCustomerService;
+	CustomerHelper iCustomerService;
 
 	@GetMapping("/customer/list")
 	public String getCustomerList(Model model) {

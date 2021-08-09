@@ -2,9 +2,9 @@ package com.birdapp.bp.stock_app.app.controller.order;
 
 import java.util.List;
 
-import com.birdapp.bp.stock_app.app.form.order.OrderForm;
+import com.birdapp.bp.stock_app.app.form.order.OrderPostForm;
+import com.birdapp.bp.stock_app.app.helper.order.OrderHelper;
 import com.birdapp.bp.stock_app.domain.entity.order.OrderEntity;
-import com.birdapp.bp.stock_app.domain.service.order.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 @Controller
-public class OrderController<F extends OrderForm> {
+public class OrderController<F extends OrderPostForm> {
 
 	@Autowired
-	OrderService iOrderService;
+	OrderHelper iOrderService;
 
 	@GetMapping("/order/list")
 	public String getOrderList(Model model) {

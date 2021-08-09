@@ -30,9 +30,8 @@ import lombok.Setter;
 public class ProductCategoryEntity extends BaseEntity implements OrganizationField {
 
 	/** ORGANIZATION ID. */
-	@ManyToOne
 	@JoinColumn(name = "ORGANIZATION_ID")
-	private OrganizationEntity organizationId;
+	private Long organizationId;
 
 	/** NAME. */
 	@Column(name = "NAME")

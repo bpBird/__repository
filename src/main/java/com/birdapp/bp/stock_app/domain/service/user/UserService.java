@@ -1,26 +1,17 @@
 package com.birdapp.bp.stock_app.domain.service.user;
 
-import com.birdapp.bp.stock_app.app.form.user.UserPostForm;
-import com.birdapp.bp.stock_app.app.form.user.UserSearchForm;
-import com.birdapp.bp.stock_app.domain.model.dto.user.UserDetailDto;
-import com.birdapp.bp.stock_app.domain.model.dto.user.UserListDto;
+import com.birdapp.bp.stock_app.domain.entity.user.UserEntity;
 
 /**
- * USER SERVICE INTERFACE.
+ * USER SERVICE.
  *
  * @author bp
  *
  */
 public interface UserService {
 
-	UserListDto getUserListDto(final Long organizationId);
+    public UserEntity saveUser(final UserEntity userEntity);
 
-	UserListDto getUserListDtoInSearch(final Long organizationId, final UserSearchForm userSearchForm);
-
-	UserDetailDto getUserDetailDto(final Long userId);
-
-	UserDetailDto saveUser(final UserPostForm userPostForm);
-
-	Boolean deleteUser(final Long userId);
+    public void deleteUser(final UserEntity userEntity);
 
 }

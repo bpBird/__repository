@@ -29,15 +29,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="user, stat : ${userList}" th:object="${user}">
+									<tr th:each="user, stat : ${userListDto.userDtos}" th:object="${user}">
 										<th scope="row" class=" px-2 text-end" th:text="*{stat.count}">001</th>
 										<td class="text-end" th:text="${user.lastname}">sample</td>
 										<td class="text-end" th:text="${user.email}">sample@gmail.com</td>
-										<td class="text-end" th:text="${user.rolename}">ADMIN</td>
-										<td class="px-5 d-flex justify-content-end">
-											<button type="button" class="btn btn-link details-btn rounded-pill ms-3">details</button>
+										<td class="text-end" th:text="${user.authority}">ADMIN</td>
+										<td class="d-flex justify-content-end px-5">
+											<button type="button" class="btn btn-link details-btn ms-3">details</button>
+											<button type="button" class="btn btn-small details-btn ms-3">edit</button>
 										</td>
-										<!-- <td class="edit-btn btn center"><a th:href="@{/user/{id}(id=*{id})}">edit</a></td> -->
 									</tr>
 								</tbody>
 							</table>

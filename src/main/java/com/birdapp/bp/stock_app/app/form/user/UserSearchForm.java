@@ -4,7 +4,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
-import com.birdapp.bp.stock_app.app.controller.user.UserForm;
 import com.birdapp.bp.stock_app.app.form.OrganizationForm;
 import com.birdapp.bp.stock_app.domain.constant.field.UserAuthority;
 

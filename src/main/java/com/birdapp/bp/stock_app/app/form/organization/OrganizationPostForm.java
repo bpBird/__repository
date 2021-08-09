@@ -3,10 +3,14 @@ package com.birdapp.bp.stock_app.app.form.organization;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.birdapp.bp.stock_app.app.form.RegisterForm;
+import com.birdapp.bp.stock_app.app.form.IdForm;
 import com.birdapp.bp.stock_app.domain.constant.status.organization.ActivateStatus;
+import com.birdapp.bp.stock_app.domain.entity.organization.OrganizationEntity;
 
-public class OrganizationPostForm {
+import lombok.Getter;
+
+@Getter
+public class OrganizationPostForm implements IdForm {
 
     private Long id;
 
@@ -17,11 +21,11 @@ public class OrganizationPostForm {
     @NotNull
     private ActivateStatus activateStatus;
 
-    OrganizationPostForm() {
+    public OrganizationPostForm() {
     }
 
-    public OrganizationPostForm(RegisterForm registerForm) {
-        this.name = registerForm.getOrganizationName();
-        this.activateStatus = registerForm.getActivateStatus();
+    public OrganizationPostForm(OrganizationEntity organizationEntity) {
+        this.name = organizationEntity.getName();
+        this.activateStatus = organizationEntity.getActivateStatus();
     }
 }

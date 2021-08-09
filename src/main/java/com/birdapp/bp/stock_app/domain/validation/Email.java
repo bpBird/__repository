@@ -6,8 +6,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.validation.Constraint;
 import javax.validation.Payload;
-import javax.validation.ReportAsSingleViolation;
 
 /**
  * VALIDATOR ANNOTATION FOR EMAIL.
@@ -15,25 +15,16 @@ import javax.validation.ReportAsSingleViolation;
  * @author bp
  *
  */
-@Documented
-// @Constraint(validatedBy = {EmailValidator.class})
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@ReportAsSingleViolation
+@Constraint(validatedBy = EmailValidator.class)
+@Documented
 public @interface Email {
-
-	//TODO read about bottom script to understand
-
-	String message() default "{com.birdapp.bp.repository_app.domain.validation.Email.message}";
-
+    
+	String message() default "Invalid email";
+    
 	Class<?>[] groups() default {};
-
+    
 	Class<? extends Payload>[] payload() default {};
 
-	@Documented
-	@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE })
-	@Retention(RetentionPolicy.RUNTIME)
-	@interface List {
-		Email[] value();
-	}
 }

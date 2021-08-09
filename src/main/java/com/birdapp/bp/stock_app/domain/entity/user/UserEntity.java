@@ -17,6 +17,7 @@ import com.birdapp.bp.stock_app.domain.entity.OrganizationField;
 import com.birdapp.bp.stock_app.domain.validation.Email;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * USER ENTITY.
@@ -27,6 +28,7 @@ import lombok.Getter;
 @Entity
 @Table(name = "USERS")
 @Getter
+@Setter
 public class UserEntity extends BaseEntity implements OrganizationField, NameField, ContactField {
 
 	/** ORGANIZATION ID. */
@@ -82,7 +84,7 @@ public class UserEntity extends BaseEntity implements OrganizationField, NameFie
 		this.phoneNumber = userPostForm.getPhoneNumber();
 		this.email = userPostForm.getEmail();
 		this.username = userPostForm.getUsername();
-		this.bcryptPassword = userPostForm.getBcryptPassword();
+		this.bcryptPassword = userPostForm.getPassword();
 		this.locale = userPostForm.getLocale();
 		this.isAccountNonLocked = userPostForm.getIsAccountNonLocked();
 		this.authority = userPostForm.getAuthority();

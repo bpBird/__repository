@@ -1,7 +1,7 @@
 package com.birdapp.bp.stock_app.domain.repository.customer;
 
+import com.birdapp.bp.stock_app.app.specification.customer.CustomerSpecification;
 import com.birdapp.bp.stock_app.domain.entity.customer.CustomerEntity;
-import com.birdapp.bp.stock_app.domain.specification.customer.CustomerSpecification;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

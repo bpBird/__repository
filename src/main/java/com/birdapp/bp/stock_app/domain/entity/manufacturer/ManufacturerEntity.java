@@ -38,9 +38,8 @@ public class ManufacturerEntity extends BaseEntity implements OrganizationField,
 														AddressField {
 
     /** ORGANIZATION ID. */
-	@ManyToOne
 	@JoinColumn(name = "ORGANIZATION_ID")
-	private OrganizationEntity organizationId;
+	private Long organizationId;
 
     /** NAME. */
     @Column(name = "NAME")

@@ -1,14 +1,9 @@
 package com.birdapp.bp.stock_app.domain.service.user;
 
-import javax.transaction.Transactional;
+import java.util.NoSuchElementException;
 
-import com.birdapp.bp.stock_app.app.form.user.UserPostForm;
-import com.birdapp.bp.stock_app.app.form.user.UserSearchForm;
 import com.birdapp.bp.stock_app.domain.entity.user.UserEntity;
-import com.birdapp.bp.stock_app.domain.helper.user.UserServiceHelper;
-import com.birdapp.bp.stock_app.domain.model.dto.user.UserDetailDto;
-import com.birdapp.bp.stock_app.domain.model.dto.user.UserDto;
-import com.birdapp.bp.stock_app.domain.model.dto.user.UserListDto;
+import com.birdapp.bp.stock_app.domain.repository.user.UserRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -21,38 +16,35 @@ import lombok.RequiredArgsConstructor;
  *
  */
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-	private final UserServiceHelper userServiceHelper;
+    private final UserRepository userRepository;
 
-	@Override
-	public UserListDto getUserListDto(final Long organizationId) {
-		UserListDto userListDto = new UserListDto();
-        userListDto.setUserList(userServiceHelper.getUserDtos(organizationId));
-        return userListDto;
-	}
+    @Override
+    public UserEntity saveUser(final UserEntity userEntity) {
+        return userRepository.findById(userEntity.getId())
+                                .map(user -> updateUser(userEntity))
+                                .orElse(userRepository.save(userEntity));
+    }
 
-	@Override
-	public UserListDto getUserListDtoInSearch(Long organizationId, UserSearchForm userSearchForm) {
-		UserListDto userListDto = new UserListDto();
-		userListDto.setUserList(userServiceHelper.getUserDtosInSearch(organizationId, userSearchForm));
-		return userListDto;
-	}
+    private UserEntity updateUser(final UserEntity userEntity) {
+        UserEntity updatingUser = userRepository.findById(userEntity.getId()).orElseThrow(() -> new NoSuchElementException());
+        updatingUser.setFirstname(userEntity.getFirstname());
+		updatingUser.setLastname(userEntity.getLastname());
+		updatingUser.setPhoneNumber(userEntity.getPhoneNumber());
+		updatingUser.setEmail(userEntity.getEmail());
+		updatingUser.setUsername(userEntity.getUsername());
+		updatingUser.setBcryptPassword(userEntity.getBcryptPassword());
+		updatingUser.setLocale(userEntity.getLocale());
+		updatingUser.setIsAccountNonLocked(userEntity.getIsAccountNonLocked());
+		updatingUser.setAuthority(userEntity.getAuthority());
+        return userRepository.save(updatingUser);
+    }
 
-	@Override
-	public UserDetailDto getUserDetailDto(Long userId) {
-		return userServiceHelper.getUserDetailDto(userId);
-	}
-
-	@Override
-	public UserDetailDto saveUser(UserPostForm userPostForm) {
-		return userServiceHelper.saveUser(userPostForm);
-	}
-
-	@Override
-	public Boolean deleteUser(Long userId) {
-		return userServiceHelper.deleteUser(userId);
-	}
+    @Override
+    public void deleteUser(final UserEntity userEntity) {
+        userRepository.delete(userEntity);
+    };
+    
 }

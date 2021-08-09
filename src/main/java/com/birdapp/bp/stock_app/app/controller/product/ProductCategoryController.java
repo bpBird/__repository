@@ -2,9 +2,9 @@ package com.birdapp.bp.stock_app.app.controller.product;
 
 import java.util.List;
 
-import com.birdapp.bp.stock_app.app.form.product.ProductCategoryForm;
+import com.birdapp.bp.stock_app.app.form.product.ProductCategoryPostForm;
+import com.birdapp.bp.stock_app.app.helper.product.ProductCategoryHelper;
 import com.birdapp.bp.stock_app.domain.entity.product.ProductCategoryEntity;
-import com.birdapp.bp.stock_app.domain.service.product.ProductCategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 @Controller
-public class ProductCategoryController<F extends ProductCategoryForm> {
+public class ProductCategoryController<F extends ProductCategoryPostForm> {
 
 	@Autowired
-	ProductCategoryService iProductCategoryService;
+	ProductCategoryHelper iProductCategoryService;
 
 	@GetMapping("/product-category/list")
 	public String getProductCategoryList(Model model) {

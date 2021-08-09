@@ -1,15 +1,21 @@
 package com.birdapp.bp.stock_app.app.controller;
 
-import com.birdapp.bp.stock_app.app.form.RegisterForm;
-import com.birdapp.bp.stock_app.app.form.user.UserPostForm;
-import com.birdapp.bp.stock_app.domain.constant.path.UtilUrl;
-import com.birdapp.bp.stock_app.domain.service.user.UserService;
+import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
+import com.birdapp.bp.stock_app.app.form.common.RegisterForm;
+import com.birdapp.bp.stock_app.app.helper.organization.OrganizationHelper;
+import com.birdapp.bp.stock_app.app.helper.user.UserHelper;
+import com.birdapp.bp.stock_app.domain.constant.path.common.EntryUrl;
+
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.RequiredArgsConstructor;
@@ -22,24 +28,36 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 @Controller
-public class RegistrationController implements CommonUrl {
+public class RegistrationController implements EntryUrl {
 
-	private final OrganizationService organizationService;
+	private final OrganizationHelper organizationHelper;
 
-	private final UserService userService;
+	private final UserHelper userHelper;
+
+	private final MessageSource messageSource;
     
-    @GetMapping("/register")
+    @GetMapping(PATH_TO + REGISTER)
 	String getRegisterView (Model model) {
-		return "register";
+		model.addAttribute(new RegisterForm());
+		return REGISTER;
 	}
 
-    @PostMapping("/sign_up")
+    @PostMapping(PATH_TO + SIGN_UP)
 	String postRegisterForm(@Validated RegisterForm registerForm,
-						RedirectAttributes redirectAttributes,
-						Model model) {
-        organizationService.saveOrganization(new OrganizationPostForm(registerForm));
-		userService.saveUser(new UserPostForm(registerForm));
-		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("organization.save.success", new String[]{}, userDetailDto.getLocale()));
+							HttpServletRequest request,
+							RedirectAttributes redirectAttributes,
+							Model model) {
+        organizationHelper.saveOrganization(registerForm.getOrganizationPostForm());
+		userHelper.saveUser(registerForm.getUserPostForm());
+		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("organization.success.save", new String[]{}, Locale.ENGLISH));
         return REDIRECT_TO + LOGIN;
 	}
+
+	// TODO implement ajax post script in js file.
+	@ResponseBody
+	@PostMapping(API_EMAIL_IS_UNIQUE_VALIDATION)
+	Boolean apiEmailIsUniqueValidation(String email) {
+		return !userHelper.isUniqueEmail(email);
+	}
+
 }
