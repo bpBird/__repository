@@ -8,7 +8,7 @@
 		<title>User list</title>
 	</head>
 	<body>
-		<div class="content" layout:fragment="content">
+		<div layout:fragment="content">
 			<div class="container">
 				<div class="row">
 					<div class="d-flex flex-column col-12 pb-3">
@@ -22,21 +22,31 @@
 								<thead class="table-header">
 									<tr>
 										<th scope="col" class="col-2 text-end">No</th>
-									  	<th scope="col" class="col-3 text-end">name</th>
+									  	<th scope="col" class="col-2 text-end">name</th>
 									  	<th scope="col" class="col-3 text-end">email</th>
 										<th scope="col" class="col-2 text-end">role</th>
-									  	<th scope="col" class="col-2"> </th>
+									  	<th scope="col" class="col-3"> </th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="user, stat : ${userListDto.userDtos}" th:object="${user}">
-										<th scope="row" class=" px-2 text-end" th:text="*{stat.count}">001</th>
+									<!-- <tr th:each="user, stat : ${userListDto.userDtos}" th:object="${user}"> -->
+									<tr th:each="user : ${userListDto.userDtos}" th:object="${user}">
+										<!-- <th scope="row" class=" px-2 text-end" th:text="*{stat.count}">001</th> -->
+										<th scope="row" class=" px-2 text-end">001</th>
 										<td class="text-end" th:text="${user.lastname}">sample</td>
 										<td class="text-end" th:text="${user.email}">sample@gmail.com</td>
 										<td class="text-end" th:text="${user.authority}">ADMIN</td>
-										<td class="d-flex justify-content-end px-5">
-											<button type="button" class="btn btn-link details-btn ms-3">details</button>
-											<button type="button" class="btn btn-small details-btn ms-3">edit</button>
+										<td class="d-flex justify-content-end me-3">
+											<div type="button" id="btnDetail" class="btn btn-icon" data-bs-toggle="modal" data-bs-target="#detailModal" data-bs-object="@targetObject">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+													<path d="M4 4v20h20v-20h-20zm18 18h-16v-13h16v13zm-3-3h-10v-1h10v1zm0-3h-10v-1h10v1zm0-3h-10v-1h10v1zm2-11h-19v19h-2v-21h21v2z"/>
+												</svg>
+											</div>
+											<div type="button" id="btnEdit" class="btn btn-icon" data-bs-toggle="modal" data-bs-target="#editFormModal" data-bs-object="@targetObject">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+													<path d="M8.424 12.282l4.402 4.399-5.826 1.319 1.424-5.718zm15.576-6.748l-9.689 9.804-4.536-4.536 9.689-9.802 4.536 4.534zm-6 8.916v6.55h-16v-12h6.743l1.978-2h-10.721v16h20v-10.573l-2 2.023z"/>
+												</svg>
+											</div>
 										</td>
 									</tr>
 								</tbody>
@@ -47,11 +57,186 @@
 				<!-- ./row -->
 				<div class="row">
 					<div class="col-12 mt-3 d-flex justify-content-end px-5">
-						<button class="btn btn-link search-btn rounded-pill ms-3" type="button">search</button>
-						<button class="btn new-btn rounded-pill ms-3" type="submit">new</button>
+						<!-- FIXME reposition icon -->
+						<div type="button" id="btnSearch" class="btn btn-mini mx-2" data-bs-toggle="modal" data-bs-target="#searchFormModal">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"/>
+							</svg>
+						</div>
+						<!-- FIXME reposition icon -->
+						<div type="button" id="btnAdd" class="btn btn-mini mx-2" data-bs-toggle="modal" data-bs-target="#editFormModal">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- ./container -->
+			<!-- #detailModal -->
+			<div class="modal fade" id="detailModal" tabindex="-1" role="form" aria-labelledby="detailModal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="detailModalTitle">User Information</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="mb-3">
+								<label for="detailName" class="col-form-label">Name</label>
+								<p id="detailName">John Smith</p> <!-- TODO th:text="*{firstname}+*{lastname}" -->
+							</div>
+							<div class="mb-3">
+								<label for="detailPhoneNumber" class="col-form-label">Phone</label>
+								<p id="detailPhoneNumber">08012345678</p>
+							</div>
+							<div class="mb-3">
+								<label for="detailEmail" class="col-form-label">Email</label>
+								<p id="detailEmail">08012345678</p>
+							</div>
+							<div class="mb-3">
+								<label for="detailLocale" class="col-form-label">Language</label>
+								<p id="detailLocale">English</p>
+							</div>
+							<div class="mb-3">
+								<label for="detailRole" class="col-form-label">Role</label>
+								<p id="detailRole">Admin</p>
+							</div>
+							<div class="mb-3">
+								<label for="detailIsAccountLocked" class="col-form-label">Account lock</label>
+								<p id="detailIsAccountLocked">off</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-small" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-small" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#editFormModal">Edit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #editFormModal -->
+			<div class="modal fade" id="editFormModal" tabindex="-1" role="form" aria-labelledby="editFormModal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="editFormModalTitle">New user</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form> <!-- FIXME set input next to label -->
+								<div class="mb-3">
+									<label for="editFormFirstname" class="col-form-label">Firstname</label>
+									<input type="text" class="modal-input" id="editFormFirstname">
+								</div>
+								<div class="mb-3">
+									<label for="editFormLastname" class="col-form-label">Lastname</label>
+									<input type="text" class="modal-input" id="editFormLastname"></input>
+								</div>
+								<div class="mb-3">
+									<label for="editFormPhoneNumber" class="col-form-label">Phone</label>
+									<input type="text" class="modal-input" id="editFormPhoneNumber">
+								</div>
+								<div class="mb-3">
+									<label for="editFormEmail" class="col-form-label">Email</label>
+									<input type="text" class="modal-input" id="editFormEmail">
+								</div>
+								<div class="mb-3">
+									<label for="editFormUsername" class="col-form-label">Username</label>
+									<input type="text" class="modal-input" id="editFormUsername">
+								</div>
+								<div class="mb-3">
+									<label for="editFormPassword" class="col-form-label">Password</label>
+									<input type="text" class="modal-input" id="editFormPassword">
+								</div>
+								<div class="mb-3">
+									<label for="editFormComfirmPassword" class="col-form-label">Confirm password</label>
+									<input type="text" class="modal-input" id="editFormConfirmPassword">
+								</div>
+								<div class="mb-3">
+									<label for="editFormLocale" class="col-form-label">Language</label>
+									<select class="modal-input" id="editFormLocale" required>
+										<option th:value="EN" th:text="English"></option>
+										<option th:value="JA" th:text="Japanese"></option>
+										<option th:value="IT" th:text="Italian"></option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label for="editFormRole" class="col-form-label">Role</label>
+									<select class="modal-input" id="editFormRole" required>
+										<option th:value="ADMIN" th:text="Admin"></option>
+										<option th:value="USER" th:text="User"></option>
+									</select>
+								</div>
+								<div class="mb-3 form-check form-switch">
+									<label class="form-check-label" for="editFormIsAccountLocked">Account lock</label>
+									<input class="form-check-input" type="checkbox" id="editFormIsAccountLocked" required>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-small" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-small">save</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #searchFormModal -->
+			<div class="modal fade" id="searchFormModal" tabindex="-1" role="form" aria-labelledby="searchFormModal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="searchFormModalTitle">Search user</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form> <!-- FIXME set input next to label -->
+								<div class="mb-3">
+									<label for="searchFormName" class="col-form-label">Name</label>
+									<input type="text" class="modal-input" id="searchFormName">
+								</div>
+								<div class="mb-3">
+									<label for="searchFormPhoneNumber" class="col-form-label">Phone</label>
+									<input type="text" class="modal-input" id="searchFormPhoneNumber">
+								</div>
+								<div class="mb-3">
+									<label for="searchFormEmail" class="col-form-label">Email</label>
+									<input type="text" class="modal-input" id="searchFormEmail">
+								</div>
+								<div class="mb-3">
+									<label for="searchFormLocale" class="col-form-label">Language</label>
+									<select class="modal-input" id="searchFormLocale">
+										<option th:value="null" th:text="select"></option>
+										<option th:value="EN" th:text="English"></option>
+										<option th:value="JA" th:text="Japanese"></option>
+										<option th:value="IT" th:text="Italian"></option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label for="searchFormRole" class="col-form-label">Role</label>
+									<select class="modal-input" id="searchFormRole">
+										<option th:value="null" th:text="select"></option>
+										<option th:value="ADMIN" th:text="Admin"></option>
+										<option th:value="USER" th:text="User"></option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label for="searchFormIsAccountLocked" class="col-form-label">Account lock</label>
+									<select class="modal-input" id="searchFormIsAccountLocked">
+										<option th:value="null" th:text="select"></option>
+										<option th:value="OFF" th:text="Off">Off</option>
+										<option th:value="ON" th:text="On">On</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-small">Reset</button>
+							<button type="button" class="btn btn-small">Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ./modal -->
 		</div>
 	</body>
 </html>

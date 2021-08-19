@@ -10,25 +10,21 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 		<link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen, projection"></link>
 		<script src="/static/js/script.js" th:src="@{/js/main.js}"></script>
-<!-- 		<script type="text/javascript"></script> -->
 		<title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">__stock</title>
 	</head>
 	<body>
-		<div class="container main-container mx-0">
+		<div class="container">
 			<div class="row d-flex flex-row">
-				<div class="left-part col-3 p-0">
+				<div class="col-3 p-0">
 					<div id="side-bar" layout:insert="side-bar::side-bar"></div>
 				</div>
-				<div class="right-part col-9 d-flex flex-column">
+				<div class="col-9 d-flex flex-column">
 					<div id="top-bar" layout:insert="top-bar::top-bar"></div>
 					<div id="content" layout:fragment="content"></div>
 				</div>
+				<!-- <footer></footer> -->
 			</div>
 		</div>
-        <!-- 
-        <script type="text/javascript" th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
-		<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
-        -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 	</body>
 </html>

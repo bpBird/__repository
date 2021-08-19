@@ -12,13 +12,16 @@ body {
   font-weight: 500;
   color: white;
   max-width: 1400px;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   margin: 0;
 }
 
 .container {
   height: 100%;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0px;
 }
 
 li {
@@ -28,6 +31,10 @@ li {
 a {
   color: white;
   text-decoration: none;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
 a:hover {
@@ -43,14 +50,48 @@ a:hover {
   color: #62abd8;
 }
 
-.btn.btn-small {
-  border: 3px solid #62abd8;
+.btn.btn-icon {
+  fill: white;
+  -webkit-transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: fill 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn.btn-icon:hover {
+  fill: #62abd8;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn.btn-mini {
+  border: 2px solid #62abd8;
   color: white;
   background-color: #62abd8;
   letter-spacing: 0.1em;
   border-radius: 50rem;
   font-weight: 500;
-  width: 120px;
+  fill: white;
+  width: 50px;
+  height: 50px;
+}
+
+.btn.btn-mini:hover {
+  border: 2px solid #3d97cf;
+  background-color: #3d97cf;
+  color: white;
+}
+
+.btn.btn-small {
+  border: 2px solid #62abd8;
+  color: white;
+  background-color: #62abd8;
+  letter-spacing: 0.1em;
+  border-radius: 50rem;
+  font-weight: 500;
+  width: 100px;
   height: 40px;
   font-size: 1.0rem;
 }
@@ -62,7 +103,7 @@ a:hover {
 }
 
 .btn.btn-medium {
-  border: 3px solid #62abd8;
+  border: 2px solid #62abd8;
   color: white;
   background-color: #62abd8;
   letter-spacing: 0.1em;
@@ -80,7 +121,7 @@ a:hover {
 }
 
 .btn.btn-large {
-  border: 3px solid #62abd8;
+  border: 2px solid #62abd8;
   color: white;
   background-color: #62abd8;
   letter-spacing: 0.1em;
@@ -97,11 +138,28 @@ a:hover {
   color: white;
 }
 
+/* icon */
+.icon-item {
+  fill: white;
+}
+
 /* form */
 form input {
   border: 2px solid white;
-  width: 250px;
+  background-color: white;
   color: #606060;
+  width: 250px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  border-radius: 50rem;
+  padding: 3px 10px 3px 10px;
+}
+
+form .modal-input {
+  border: 2px solid #BEDCEF;
+  background-color: #BEDCEF;
+  color: white;
+  width: 250px;
   letter-spacing: 0.05em;
   font-weight: 400;
   border-radius: 50rem;
@@ -109,9 +167,7 @@ form input {
 }
 
 form select {
-  border: 2px solid white;
   width: 250px;
-  color: #606060;
   letter-spacing: 0.05em;
   font-weight: 400;
   border-radius: 50rem;
@@ -122,11 +178,78 @@ form label {
   width: 250px;
 }
 
+form .form-check-input:checked {
+  border-color: #62abd8;
+  background-color: #62abd8;
+}
+
 /* logo */
 .logo {
   height: 100px;
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 700;
+}
+
+/* side-bar */
+.side-bar {
+  height: 100vh;
+  border-right: 3px solid white;
+}
+
+.side-bar .menu-list li {
+  font-size: 25px;
+}
+
+/* top-bar */
+.top-bar {
+  height: 80px;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.top-bar .menu-list li {
+  font-size: 35px;
+}
+
+.top-bar .clock {
+  font-size: 25px;
+}
+
+.top-bar .search-box {
+  background-color: white;
+  height: 40px;
+}
+
+.top-bar .search-icon {
+  fill: #BEDCEF;
+}
+
+.top-bar .search-icon:hover {
+  fill: #62abd8;
+}
+
+/* title */
+.title {
+  text-align: right;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0px 30px 0px 30px;
+  color: white;
+}
+
+/* data table */
+table th {
+  color: white;
+}
+
+table tbody {
+  color: white;
+}
+
+/* modal */
+.modal {
+  color: #62abd8;
+  border-radius: 30px;
 }
 
 /* FOOTER */

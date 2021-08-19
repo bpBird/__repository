@@ -22,6 +22,7 @@ CREATE TABLE users (
 	bcrypt_password			VARCHAR(255)	NOT NULL,
 	locale 			    	VARCHAR(50)		NOT NULL,
 	is_account_non_locked	INT				NOT NULL			CHECK (is_account_non_locked <= 1),
+	-- FIXME authority -> role
 	authority				VARCHAR(100)	NOT NULL,
 	created_at				TIMESTAMP		NOT NULL			DEFAULT CURRENT_TIMESTAMP,
 	created_by				BIGINT,

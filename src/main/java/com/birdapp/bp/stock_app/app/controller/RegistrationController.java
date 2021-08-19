@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import lombok.RequiredArgsConstructor;
 
@@ -43,17 +44,17 @@ public class RegistrationController implements EntryUrl {
 	}
 
     @PostMapping(PATH_TO + SIGN_UP)
-	String postRegisterForm(@Validated RegisterForm registerForm,
+	RedirectView postRegisterForm(@Validated RegisterForm registerForm,
 							HttpServletRequest request,
 							RedirectAttributes redirectAttributes,
 							Model model) {
         organizationHelper.saveOrganization(registerForm.getOrganizationPostForm());
 		userHelper.saveUser(registerForm.getUserPostForm());
 		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("organization.success.save", new String[]{}, Locale.ENGLISH));
-        return REDIRECT_TO + LOGIN;
+        return new RedirectView(PATH_TO + LOGIN);
 	}
 
-	// TODO implement ajax post script in js file.
+	// TODO implement ajax post script in js file. separate validation controller from this controller?
 	@ResponseBody
 	@PostMapping(API_EMAIL_IS_UNIQUE_VALIDATION)
 	Boolean apiEmailIsUniqueValidation(String email) {

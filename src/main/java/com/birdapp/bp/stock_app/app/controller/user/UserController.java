@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import lombok.RequiredArgsConstructor;
 
@@ -73,23 +74,23 @@ public class UserController<UPF, USF extends UserForm> implements UserUrl {
 	}
 
 	@PostMapping(PATH_TO + USER_MODAL_SAVE)
-	String postUserSave(@Validated UserPostForm userPostForm,
+	RedirectView postUserSave(@Validated UserPostForm userPostForm,
 						@AuthenticationPrincipal UserDetailDto userDetailDto,
 						RedirectAttributes redirectAttributes,
 						Model model) {
 		userHelper.saveUser(userPostForm);
 		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("user.save.success", new String[]{}, userDetailDto.getLocale()));
-        return REDIRECT_TO + PATH_TO + USER_LIST;
+        return new RedirectView(PATH_TO + USER_LIST);
 	}
 
 	@DeleteMapping(PATH_TO + USER_MODAL_DELETE)
-	String postUserDelete(@RequestParam(name = "id", required = true) Long userId,
+	RedirectView postUserDelete(@RequestParam(name = "id", required = true) Long userId,
 						  @AuthenticationPrincipal UserDetailDto userDetailDto,
 						  RedirectAttributes redirectAttributes,
 						  Model model) {
 		userHelper.deleteUser(userId);
 		redirectAttributes.addFlashAttribute("message", messageSource.getMessage("user.save.success", new String[]{}, userDetailDto.getLocale()));
-		return REDIRECT_TO + PATH_TO + USER_LIST;
+		return new RedirectView(PATH_TO + USER_LIST);
 	}
 	
 }

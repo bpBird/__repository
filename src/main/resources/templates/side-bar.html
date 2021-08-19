@@ -10,32 +10,32 @@
 						<div id="logo" class="logo align-bottom text-end">__stock</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row mt-3">
 					<div class="col-12">
 						<ul class="menu-list d-flex flex-column">
-							<li class="menu-item text-end">
+							<li class="text-end mb-3">
 								<a href="../templates/order/list.html">Orders</a>
 							</li>
-							<li class="menu-item text-end">
+							<li class="text-end mb-3">
 								<a href="../templates/customer/list.html">Customers</a>
 							</li>
-							<li class="menu-item text-end">
+							<li class="text-end mb-3">
 								<a href="../templates/product/item/list.html">Products</a>
 							</li>
-							<li class="menu-item text-end">
+							<li class="text-end mb-3">
 								<a href="../templates/manufacturer/item/list.html">Manufacturers</a>
 							</li>
-							<li class="menu-item text-end">
+							<li class="text-end mb-3">
 								<a href="../templates/user/item/list.html">Users</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="row align-items-end">
-					<div class="col-12">
-						<ul class="settings-list">
-							<li class="setting-item ms-4">
-								<div class="user-info icon-item">
+				<div class="row setting-items align-items-end">
+					<div class="col-12 text-end">
+						<ul class="d-inline-flex align-bottom">
+							<li>
+								<div class="btn btn-icon">
 									<a href="../templates/settings/user-info.html">
 									<!-- <a href="../templates/settings/user-info.html" th:href="@{/settings/user-info/{userId}(userId=${user.id})}"> -->
 										<!-- <img src="../../resources/static/img/account_icon.png" alt="user" title="user" th:src="@{/img/account_icon.png}"> -->
@@ -45,8 +45,8 @@
 									</a>
 								</div>
 							</li>
-							<li class="setting-item ms-4">
-								<div class="music icon-item">
+							<li>
+								<div class="btn btn-icon">
 									<a href="../templates/settings/music.html">
 									<!-- <a href="../templates/settings/music.html" th:href="@{/settings/music/{userId}(userId=${user.id})}"> -->
 										<!-- <img src="../../resources/static/img/disk_icon.png" alt="music" title="music" th:src="@{/img/disk_icon.png}"> -->
@@ -56,8 +56,8 @@
 									</a>
 								</div>
 							</li>
-							<li class="setting-item ms-4">
-								<div class="setting icon-item">
+							<li>
+								<div class="btn btn-icon">
 									<a href="../templates/settings/setting.html">
 									<!-- <a href="../templates/settings/setting.html" th:href="@{/settings/setting/{userId}(userId=${user.id})}"> -->
 										<!-- <img src="../../resources/static/img/gear_icon.png" alt="setting" title="setting" th:src="@{/img/gear_icon.png}"> -->
@@ -67,13 +67,6 @@
 									</a>
 								</div>
 							</li>
-							<!-- delete it later maybe -->
-							<li>
-								<form th:action="@{/logout}" method="post">
-									<input type="submit" value="Sign Out"/>
-								</form>
-							</li>
-							<!-- ./ -->
 						</ul>
 					</div>
 				</div>
