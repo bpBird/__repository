@@ -34,4 +34,5 @@ public class OrganizationServiceImpl implements OrganizationSerivce {
 		updatingOrganization.setActivateStatus(organizationEntity.getActivateStatus());
         return organizationRepository.save(updatingOrganization);
     }
+    
 }

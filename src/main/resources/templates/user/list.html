@@ -33,7 +33,7 @@
 									<tr th:each="user : ${userListDto.userDtos}" th:object="${user}">
 										<!-- <th scope="row" class=" px-2 text-end" th:text="*{stat.count}">001</th> -->
 										<th scope="row" class=" px-2 text-end">001</th>
-										<td class="text-end" th:text="${user.lastname}">sample</td>
+										<td class="text-end" th:text="*{firstname} + '&nbsp;' + *{lastname}">sample</td>
 										<td class="text-end" th:text="${user.email}">sample@gmail.com</td>
 										<td class="text-end" th:text="${user.authority}">ADMIN</td>
 										<td class="d-flex justify-content-end me-3">
